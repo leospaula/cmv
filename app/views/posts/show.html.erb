@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Post %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @post.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:slug) %></dt>
+      <dd><pre class="prettyprint"><%= @post.slug %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_md) %></dt>
+      <dd><pre class="prettyprint"><%= @post.content_md %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:content_html) %></dt>
+      <dd><pre class="prettyprint"><%= @post.content_html %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:draft) %></dt>
+      <dd><pre class="prettyprint"><%= @post.draft %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @post.slug %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              posts_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_post_path(@post), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              post_path(@post),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Content md:</strong>
-  <%= @post.content_md %>
-</p>
-
-<p>
-  <strong>Content html:</strong>
-  <%= @post.content_html %>
-</p>
-
-<p>
-  <strong>Draft:</strong>
-  <%= @post.draft %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
