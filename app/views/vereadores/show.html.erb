@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag @vereador.avatar_image_id %>
+</p>
+
+
+<p>
+  <strong>Nome:</strong>
+  <%= @vereador.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @vereador.email %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @vereador.facebook %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @vereador.twitter %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @vereador.descricao %>
+</p>
+
+<p>
+  <strong>Mesa diretora:</strong>
+  <%= @vereador.mesa_diretora %>
+</p>
+
+<p>
+  <strong>Cargo mesa:</strong>
+  <%= @vereador.cargo_mesa %>
+</p>
+
+<%= link_to 'Edit', edit_vereador_path(@vereador) %> |
+<%= link_to 'Back', vereadores_path %>

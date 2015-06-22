@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  resources :vereadores
+
   get 'landings/index'
 
+  get 'galeria' => 'landings#galeria', :as => 'galeria_page'
+
+  get 'noticias' => 'posts#index', :as => 'noticia_page'
+
+  get 'institucional' => 'landings#institucional', :as => 'institucional_page'
   resources :posts
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

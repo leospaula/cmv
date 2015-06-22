@@ -1,0 +1,19 @@
+<%= simple_form_for(@vereador, html: { class: "directUpload" }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :email %>
+    <%= f.input :facebook %>
+    <%= f.input :twitter %>
+    <%= f.input :descricao %>
+    <%= f.input :mesa_diretora %>
+    <%= f.input :cargo_mesa %>
+    <%= f.file_field :avatar_image_id %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -9,10 +9,8 @@
       <dd><pre class="prettyprint"><%= @post.title %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:slug) %></dt>
       <dd><pre class="prettyprint"><%= @post.slug %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:content_md) %></dt>
-      <dd><pre class="prettyprint"><%= @post.content_md %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:content_html) %></dt>
-      <dd><pre class="prettyprint"><%= @post.content_html %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:article) %></dt>
+      <dd><pre class="prettyprint"><%= markdown @post.article %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:draft) %></dt>
       <dd><pre class="prettyprint"><%= @post.draft %></pre></dd>
   </dl>

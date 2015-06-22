@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615201516) do
+ActiveRecord::Schema.define(version: 20150621212131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,11 +49,23 @@ ActiveRecord::Schema.define(version: 20150615201516) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "slug"
-    t.text     "content_md"
-    t.text     "content_html"
+    t.text     "article"
     t.boolean  "draft"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -79,5 +91,18 @@ ActiveRecord::Schema.define(version: 20150615201516) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vereadores", force: true do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.text     "descricao"
+    t.boolean  "mesa_diretora"
+    t.string   "cargo_mesa"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_image_id"
+  end
 
 end

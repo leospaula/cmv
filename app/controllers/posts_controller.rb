@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post_redirect, only: [:show]
 
   # GET /posts
   # GET /posts.json
@@ -67,9 +68,21 @@ class PostsController < ApplicationController
   end
 
   private
+     # Use callbacks to share common setup or constraints between actions.
+    def set_post_redirect
+      @post = Post.friendly.find(params[:id])
+      # If an old id or a numeric id was used to find the record, then
+      # the request path will not match the post_path, and we should do
+      # a 301 redirect that uses the current friendly id.     
+      if request.path != post_path(@post)
+        redirect_to @post, status: :moved_permanently
+      end
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,38 @@
+<section id="institucional">
+<div class="row">
+    
+    <div class="col-md-2">
+
+          	
+      <!-- tabs left -->
+      <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab-1" data-toggle="tab">Conheça a Câmara</a></li>
+          <li><a href="#tab-2" data-toggle="tab">Ex-Presidentes</a></li>
+          <li><a href="#tab-3" data-toggle="tab">Mesa diretora</a></li>
+          <li><a href="#tab-4" data-toggle="tab">Conheça Valença</a></li>
+        </ul>
+        </div>
+       </div>
+       <div class="col-md-9">
+        <div class="tab-content pill-left">
+         <div class="tab-pane active text-justify" id="tab-1">
+         	<%= render partial: "elements/conheca_camara" %>
+         </div>
+         <div class="tab-pane" id="tab-2">
+         	<%= render partial: "elements/ex_presidentes" %>
+         </div>
+         <div class="tab-pane" id="tab-3">
+         Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+         Quisque mauris augue, molestie tincidunt condimentum vitae. 
+         </div>
+         <div class="tab-pane" id="tab-4">
+         	<%= render partial: "elements/conheca_valenca" %>
+         </div>
+        </div>
+      </div>
+
+      <!-- /tabs -->
+      
+    </div>
+</section>

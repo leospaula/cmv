@@ -1,0 +1,50 @@
+<h1>Listing vereadores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Descricao</th>
+      <th>Mesa diretora</th>
+      <th>Cargo mesa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vereadores.each do |vereador| %>
+      <tr>
+        <td><%= vereador.nome %></td>
+        <td><%= vereador.email %></td>
+        <td><%= vereador.facebook %></td>
+        <td><%= vereador.twitter %></td>
+        <td><%= vereador.descricao %></td>
+        <td><%= vereador.mesa_diretora %></td>
+        <td><%= vereador.cargo_mesa %></td>
+        <td><%= link_to 'Show', vereador %></td>
+        <td><%= link_to 'Edit', edit_vereador_path(vereador) %></td>
+        <td><%= link_to 'Destroy', vereador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vereador', new_vereador_path %>
+
+<h1>Vereadores</h1>
+<section id="vereadores">
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <% @vereadores.each do |vereador| %>
+          <li><%= vereador.nome %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>

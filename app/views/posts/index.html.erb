@@ -1,3 +1,4 @@
+<!--
 <%- model_class = Post -%>
 <div class="page-header">
   <h1><%=t '.title', :default => Post %></h1>
@@ -8,8 +9,7 @@
       <th>ID</th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:slug) %></th>
-      <th><%= model_class.human_attribute_name(:content_md) %></th>
-      <th><%= model_class.human_attribute_name(:content_html) %></th>
+      <th><%= model_class.human_attribute_name(:article) %></th>
       <th><%= model_class.human_attribute_name(:draft) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -21,8 +21,7 @@
         <td><%= post.id %></td>
         <td><%= post.title %></td>
         <td><%= post.slug %></td>
-        <td><%= post.content_md %></td>
-        <td><%= post.content_html %></td>
+        <td><%= post.article %></td>
         <td><%= post.draft %></td>
         <td><%=l post.created_at, format: :long %></td>
         <td>
@@ -41,4 +40,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary' %> -->

@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cmv</title>
+  <title><%= @title || "Camara" %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><!-- Prelang: Analytics / Google Analytics -->
     <%= analytics_init if Rails.env.production? or Rails.env.development? %></head>
 <body>
-<%= render partial: "elements/navbar" %>
+<div id="wrap">
+      <%= render partial: "elements/header" %>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <%= render partial: "elements/messages" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%= render partial: "elements/footer" %>
+
 <%= bootstrap_flash %>
 
-
-<%= yield %>
 
 </body>
 </html>

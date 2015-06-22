@@ -53,6 +53,19 @@ gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 
+gem 'pygments.rb'
+gem 'redcarpet'
+
+gem "mini_magick"
+gem "aws-sdk"
+
+
+# Friendly_id: https://github.com/norman/friendly_id
+gem 'friendly_id', '5.1.0'
+
+# Font-awesome: https://github.com/FortAwesome/font-awesome-sass
+gem 'font-awesome-sass', '4.3.2.1'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
