@@ -11,12 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.ui.widget
 //= require turbolinks
 //= require bootstrap
+//= require summernote
 //= require landings
 //= require blueimp-gallery.min
 //= require z.jquery.fileupload
 
 //= require_tree .
+
+$('[data-provider="summernote"]').each(function(){
+  $(this).summernote({ });
+})

@@ -3,10 +3,18 @@
 		<div class="col-md-9">
 			<hr>
 			<h5>Noticias</h5>
-			Aqui fica as ultimas noticias
-
-
-
+			<ul>
+			<% @noticias.each do |noticia| %>
+			<li>
+		    <article class="just article">
+		      <span class="small_date_box"><%= l noticia.publicado_em, format: "%B %d, %Y"%></span>
+		      <h3 class="post"><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a></h3>
+		      <%= noticia.introducao.html_safe %>
+		      <div class="right"><a href="/noticias/<%= noticia.to_url %>"> "Leia Mais"</a></div>
+		    </article>
+		    </li>
+		    <% end %>
+		    </ul>
 		</div>
 		<div class="col-md-3">
 			<hr>

@@ -47,8 +47,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'
 gem 'binding_of_caller'
 gem 'simple_form'
-gem 'omniauth'
-gem 'omniauth-facebook'
+# gem 'omniauth'
+# gem 'omniauth-facebook'
 gem 'google-analytics-rails'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
@@ -59,9 +59,19 @@ gem 'redcarpet'
 gem "mini_magick"
 gem "aws-sdk"
 
+gem 'carrierwave'
+
+gem 'exceptions-resource', github: 'xdougx/exceptions-resource', require: 'exceptions'
+
+# This is the right gem to use summernote editor in Rails projects.
+gem 'summernote-rails'
+
+# To solve the problems on the turbolinks
+gem 'jquery-turbolinks'
+
 
 # Friendly_id: https://github.com/norman/friendly_id
-gem 'friendly_id', '5.1.0'
+# gem 'friendly_id', '5.1.0'
 
 # Font-awesome: https://github.com/FortAwesome/font-awesome-sass
 gem 'font-awesome-sass', '4.3.2.1'

@@ -17,4 +17,6 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular "vereador", "vereadores"
+  inflect.irregular "transparencia", "transparencias"
+  inflect.irregular "noticia", "noticias"
 end

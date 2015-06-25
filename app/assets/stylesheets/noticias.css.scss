@@ -1,0 +1,212 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-weight: 700;
+}
+
+a {
+  color: #D74C5A;
+}
+
+
+.inside_margeagle_tb {
+  padding: 20px 0;
+}
+
+.outside_margeagle_tb {
+  margin: 20px 0;
+}
+
+.article {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 1px #DFDFDF;  
+  height: 150px;
+  width: 50%;
+
+  	img {
+  		width: 100%;
+  		padding: 0 10px;
+	}
+}
+
+.date_box {
+  display: inline-block;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  padding: 0.25em 1em 0.25em 1em;
+  background: #EE8F8A;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+}
+
+.small_date_box {
+  display: inline-block;
+  font-size: 0.75em;
+  letter-spacing: 2px;
+  padding: 0.125em 0em;
+  color: #EE8F8A;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  border: 0;
+}
+
+
+/*
+ * Aligns
+ */
+
+.center {
+  text-align: center;
+}
+
+.just {
+  text-align: justify;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+/*
+ * Text Box
+ */
+.sts-draft {
+  padding: 5px 10px;
+  color: #fff;
+  background: #b0b0b0;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100px;
+}
+
+/******************************************************
+ * Subjects
+ */
+
+.principal {
+  @extend .center;
+  font-weight: 900;
+  color: #D25142;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  letter-spacing: 13px;
+  text-transform: uppercase;
+  font-size: 50px;
+  cursor: pointer;
+
+  a:hover {
+    color: #FF896C;
+  }
+
+  &:hover {
+    color: #FF896C;
+  }
+}
+
+.category {
+  font-weight: 700;
+  color: #D25142;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+
+  a:hover {
+    color: #FF896C;
+  }
+
+  &:hover {
+    color: #FF896C;
+  }  
+}
+
+.hand {
+  font-size: 20px;
+  color: #D25142;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  letter-spacing: 13px;
+  text-transform: uppercase;
+}
+
+.post {
+  color: #F15766;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  font-weight: 400;
+}
+
+.aside {
+  color: #F15766;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  font-size: 25px;
+  font-weight: 300;
+}
+
+#author {
+  font-weight: 700;
+  color: #D25142;
+  text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
+  letter-spacing: 13px;
+  text-transform: uppercase;
+  font-size: 40px;
+
+}
+
+.personal_skill {
+  font-weight: 300;
+  color: #7E0005;
+  margin-bottom: 20px;
+}
+
+.personal_sub_skill {
+  font-weight: 700;
+  color: #C70009;
+}
+
+.list_skills {
+  list-style: none;
+  padding-left: 0px;
+  li {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    list-style-type: none;
+  }
+  li.title {
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 23px;
+  }
+
+  li.sub {
+    padding: 10px 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .principal {
+    font-size: 30px;
+  }
+
+  .post {
+    font-size: 25px;
+  }
+
+  .category {
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+} 

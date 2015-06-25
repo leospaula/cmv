@@ -1,0 +1,82 @@
+class Article < ActiveRecord::Base
+
+#  field :title
+#  field :introduction
+#  field :body
+#  field :permalink
+#  field :status
+#  field :cover
+#  field :published_in
+
+
+  #mount_uploader :cover, CoverUploader
+
+  belongs_to :admin_user
+
+  validates :title, :introduction, :body, presence: true
+
+  before_create :init
+  after_create :build_permalink
+
+  def self.build params
+    article = new params
+    article.cover = params[:cover]
+
+    if article.valid?
+      article.save
+      article
+    else
+      raise Exceptions::Model.build(article)
+    end
+  end
+
+  def self.published
+    where(status: 'published').order('created_at DESC')
+  end
+
+  def build_update params
+    self.cover = params[:cover] if params.key?(:cover)
+    self.update_attributes(params)
+
+    if self.valid?
+      self
+    else
+      raise Exceptions::Model.build(self)
+    end
+  end
+
+  def init
+    self.status = 'draft'
+  end
+
+  def build_permalink
+    self.update_attributes(permalink: "#{self.title.parameterize}") if self.permalink.blank?
+  end
+
+  def publish!
+    self.update_attributes(published_in: Time.now, status: 'published')
+  end
+
+  def unpublish!
+    self.update_attributes(published_in: nil, status: 'draft')
+  end
+
+
+  def update params
+    self.update_attributes(params)
+    Excetions::Model.build(article) unless self.valid?
+  end
+
+  def draft?
+    self.status =~ /draft/
+  end
+
+  def to_url
+    "#{self.permalink}"
+  end
+
+  def to_full_url
+    "http://ruby-everyday.ninja/#{self.to_url}"
+  end
+
+end

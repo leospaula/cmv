@@ -1,5 +1,6 @@
 class LandingsController < ApplicationController
   def index
+  	@noticias = Noticia.all
   end
 
   def galeria	
@@ -7,4 +8,8 @@ class LandingsController < ApplicationController
 
   def intitucional
   end
+
+  private
+
+
 end

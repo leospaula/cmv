@@ -1,0 +1,17 @@
+class ArticlesController < InheritedResources::Base
+
+	def index
+    	@articles = Article.all
+  	end
+
+	def show
+    	@article = Article.find_by(permalink: params[:id])
+  	end
+
+  private
+
+    def article_params
+      params.require(:article).permit(:title, :introduction, :body, :permalink, :status, :cover, :published_in)
+    end
+end
+

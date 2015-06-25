@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @article.introduction %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>Permalink:</strong>
+  <%= @article.permalink %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @article.status %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @article.cover %>
+</p>
+
+<p>
+  <strong>Published in:</strong>
+  <%= @article.published_in %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+<div class="container">
+<section class="row">
+  <article class="just article">
+    <p class="center"><%= l @article.created_at, format: "%A , %d de %B, %Y" %></p>
+
+    <h2 class="post"><%= @article.title %></h2>
+    <div class="inside_margeagle_tb addthis_native_toolbox"></div>
+    <div>
+      <% if @article.cover.present? %>
+      <picture class="outside_margeagle_tb block">
+        <%= image_tag @article.cover.url %>
+      </picture>
+      <% end %> 
+         
+      <%= @article.introduction.html_safe %>
+      <%= @article.body.html_safe %>
+    </div>
+  </article>
+</section>
+</div>
+
