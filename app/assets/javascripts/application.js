@@ -20,6 +20,9 @@
 //= require landings
 //= require blueimp-gallery.min
 //= require z.jquery.fileupload
+//= require moment
+//= require fullcalendar
+//= require event-pt-br
 
 //= require_tree .
 

@@ -56,10 +56,18 @@ gem 'tzinfo-data'
 gem 'pygments.rb'
 gem 'redcarpet'
 
-gem "mini_magick"
-gem "aws-sdk"
+
+gem 'aws-sdk'
 
 gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
+
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
+
 
 gem 'exceptions-resource', github: 'xdougx/exceptions-resource', require: 'exceptions'
 
