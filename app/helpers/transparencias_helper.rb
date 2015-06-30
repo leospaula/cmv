@@ -1,0 +1,2 @@
+module TransparenciasHelper
+end

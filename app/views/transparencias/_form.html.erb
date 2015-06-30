@@ -1,0 +1,17 @@
+<%= simple_form_for(@transparencia) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.select :ano, 
+    options_for_select(Transparencia.anos, @transparencia.ano) %>
+    <%= f.select :mes, 
+    options_for_select(Transparencia.meses, @transparencia.mes) %>
+    <%= f.select :tipo, 
+    options_for_select(Transparencia.tipos, @transparencia.tipo) %>
+    <%= f.input :arquivo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

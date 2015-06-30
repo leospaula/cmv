@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @transparencia.ano %>
+</p>
+
+<p>
+  <strong>Mes:</strong>
+  <%= @transparencia.mes %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @transparencia.tipo %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @transparencia.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_transparencia_path(@transparencia) %> |
+<%= link_to 'Back', transparencias_path %>

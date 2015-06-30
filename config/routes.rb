@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :transparencias
+
+
   resources :events
 
   resources :noticias
