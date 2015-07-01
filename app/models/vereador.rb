@@ -1,4 +1,4 @@
 class Vereador < ActiveRecord::Base
-	mount_uploader :imagem, ImagemUploader
+	mount_uploader :avatar_image_id, ImagemUploader
 	
 end
