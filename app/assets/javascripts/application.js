@@ -24,6 +24,12 @@
 //= require fullcalendar
 //= require event-pt-br
 
+// RailsAjax
+
+//= require jquery.history
+//= require jquery.rails-ajax
+//= require RailsAjax-Config
+
 //= require_tree .
 
 $('[data-provider="summernote"]').each(function(){

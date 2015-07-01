@@ -623,15 +623,23 @@ img {
 
 #header {
   background-color: #fcfcfc;
-  height: 150px;
+  height: 250px;
 }
 
 #logo{
-  margin: 20px 20px;
+  margin: 30px 20px;
+
+  a {
+    
+
+    img {
+      height: 150px; 
+    }
+  }
 }
 
 #social-link {
-  margin-top: 40px;
+  margin-top: 70px;
 
 
   ul {

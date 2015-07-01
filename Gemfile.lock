@@ -292,6 +292,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
+    rails-ajax (1.0.0.20140320)
+      rails (>= 3.2.1)
     rails_config (0.4.2)
       activesupport (>= 3.0)
     railties (4.1.4)
@@ -386,6 +388,7 @@ DEPENDENCIES
   pry-rails
   pygments.rb
   rails (= 4.1.4)
+  rails-ajax
   rails_config
   redcarpet
   rmagick
@@ -398,3 +401,6 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   validates_formatting_of
+
+BUNDLED WITH
+   1.10.3

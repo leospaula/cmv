@@ -67,6 +67,8 @@ gem 'fog'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
+gem 'rails-ajax'
+
 
 
 gem 'exceptions-resource', github: 'xdougx/exceptions-resource', require: 'exceptions'

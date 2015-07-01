@@ -1,0 +1,36 @@
+  <%- model_class = Transparencia -%>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:ano) %></th>
+      <th><%= model_class.human_attribute_name(:mes) %></th>
+      <th><%= model_class.human_attribute_name(:tipo) %></th>
+      <th><%= model_class.human_attribute_name(:arquivo) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transparencias.each do |transparencia| %> 
+     <tr>
+      <td><%= transparencia.id %></td>
+      <td><%= transparencia.ano %></td>
+      <td><%= transparencia.mes %></td>
+      <td><%= transparencia.tipo %></td>
+      <td><%= transparencia.arquivo %></td>
+      <td><%=l transparencia.created_at, format: :long %></td>
+      <td>
+        <%= link_to transparencia_path(transparencia), :class => 'btn btn-xs', :title => "Visualizar" do %>
+          <%= glyph 'info-sign' %>
+          <%= glyph 'pencil' %>
+        <%- end -%>
+        <%= link_to transparencia_path(transparencia), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "Deletar" do %>
+          <%= glyph 'remove' %>
+        <%- end -%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
