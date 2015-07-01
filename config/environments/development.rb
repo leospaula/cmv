@@ -38,9 +38,6 @@ Rails.application.configure do
   #->Prelang
   GA.tracker = ""
 
-  ENV['S3_KEY'] = "AKIAI7KEWNRN3EQ3UONA"
-  ENV['S3_SECRET'] = "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"
-  ENV['S3_BUCKET'] = "cmv-imagens"
 
 end
 
