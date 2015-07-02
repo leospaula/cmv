@@ -38,4 +38,17 @@ Rails.application.configure do
   #->Prelang
   GA.tracker = ""
 
+  Time::DATE_FORMATS[:header] = "%d de %b de %Y"
+
+  # Include your application configuration below
+  Date::MONTHNAMES = [nil] + %w(Janeiro Fevereiro MarÃ§o Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)
+  Date::DAYNAMES = %w(Domingo Segunda-Feira TerÃ§a-Feira Quarta-Feira Quinta-Feira Sexta-Feira SÃ¡bado)
+  Date::ABBR_MONTHNAMES = [nil] + %w(Jan Fev Mar Abr Mai Jun Jul Aug Set Out Nov Dez)
+  Date::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sab)
+
+  Time::MONTHNAMES = Date::MONTHNAMES
+  Time::DAYNAMES = Date::DAYNAMES
+  Time::ABBR_MONTHNAMES = Date::ABBR_MONTHNAMES
+  Time::ABBR_DAYNAMES = Date::ABBR_DAYNAMES
+
 end

@@ -18,6 +18,9 @@ class Noticia < ActiveRecord::Base
   #before_create :init
   after_create :build_permalink
 
+
+  
+
   def self.build params
     noticia = new params
    	noticia.imagem = params[:imagem]
