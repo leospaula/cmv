@@ -19,7 +19,7 @@
       <td><%= transparencia.ano %></td>
       <td><%= transparencia.mes %></td>
       <td><%= transparencia.tipo %></td>
-      <td><%= transparencia.arquivo %></td>
+      <td><%= link_to image_tag(transparencia.arquivo_url), transparencia.arquivo_url %></td>
       <td><%=l transparencia.created_at, format: :long %></td>
       <td>
         <%= link_to transparencia_path(transparencia), :class => 'btn btn-xs', :title => "Visualizar" do %>
