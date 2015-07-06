@@ -60,7 +60,7 @@ gem 'redcarpet'
 gem 'aws-sdk'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'fog'
 
 
@@ -69,6 +69,12 @@ gem 'momentjs-rails'
 
 gem 'rails-ajax'
 
+gem 'ckeditor'
+gem 'bxslider-rails'
+
+gem 'active_skin'
+
+gem 'cancancan', '~> 1.10'
 
 
 gem 'exceptions-resource', github: 'xdougx/exceptions-resource', require: 'exceptions'

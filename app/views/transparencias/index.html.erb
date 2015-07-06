@@ -7,17 +7,17 @@
         <div class="col-md-12 space-lg">
           <div class="input-group"></div>
             <div class="row">
-              <div class="col-md-2 col-md-offset-3">
-                <%= select_tag :ano, options_for_select(Transparencia.anos), :prompt => "Todos" , :class => 'form-control'%>
+              <div class="col-md-2 col-md-offset-2">
+                <%= select_tag :ano, options_for_select(Transparencia.anos), :prompt => "Todos" , :class => 'form-control input-sm'%>
               </div>
               <div class="col-md-2">
-                <%= select_tag :mes, options_for_select(Transparencia.meses), :prompt => "Todos" , :class => 'form-control' %>
+                <%= select_tag :mes, options_for_select(Transparencia.meses), :prompt => "Todos" , :class => 'form-control input-sm' %>
               </div>
               <div class="col-md-2">
-                <%= select_tag :tipo, options_for_select(Transparencia.tipos), :prompt => "Todos" , :class => 'form-control'%>
+                <%= select_tag :tipo, options_for_select(Transparencia.tipos), :prompt => "Todos" , :class => 'form-control input-sm'%>
               </div>
           	  <div class="col-md-1">
-                <button class="btn btn-primary square" type="submit" id="search_submit">
+                <button class="btn btn-primary btn-sm" type="submit" id="search_submit">
                   <i class="fa fa-search fa-lg"></i>
                 </button> 
               </div>
@@ -25,11 +25,9 @@
         </div>
       <% end %>
     <div class="col-md-12 space-lg">
+    	<hr>
       <div id="transparencia_table"><%= render partial: 'elements/conteudo_transparencia'%></div>
 
-      <%= link_to "Novo",
-                new_transparencia_path,
-                :class => 'btn btn-primary' %>
     </div>
    
   </div>

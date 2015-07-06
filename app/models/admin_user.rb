@@ -4,6 +4,9 @@ class AdminUser < ActiveRecord::Base
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :noticia
+
+	def self.roles
+  	tipos = ['Administrador','Comunicacao','Contabilidade', 'Legislativo']
+  end
 
 end

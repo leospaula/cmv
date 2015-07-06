@@ -1,0 +1,31 @@
+<div class="conteiner">
+  <div class="row">
+    <div class="col-md-12"><h3>Pesquisa de Leis</br><small></small></h3></div>
+
+  
+    <%= form_tag({controller: 'legislacoes', action: 'index'}, method: :get, remote: true) do %>
+        <div class="col-md-12 space-lg">
+          <div class="input-group"></div>
+            <div class="row">
+              <div class="col-md-2 col-md-offset-2">
+                <%= select_tag :ano, options_for_select(Legislacao.anos), :prompt => "Todos" , :class => 'form-control input-sm'%>
+              </div>
+              <div class="col-md-2">
+                <%= select_tag :tipo, options_for_select(Legislacao.tipos), :prompt => "Todos" , :class => 'form-control input-sm'%>
+              </div>
+              <div class="col-md-1">
+                <button class="btn btn-primary btn-sm" type="submit" id="search_submit">
+                  <i class="fa fa-search fa-lg"></i>
+                </button> 
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <div class="col-md-12 space-lg">
+      <hr>
+      <div id="legislacao_table"><%= render partial: 'elements/conteudo_legislacao'%></div>
+
+    </div>
+   
+  </div>
+</div>

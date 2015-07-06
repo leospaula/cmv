@@ -1,45 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Foto:</strong>
-  <%= image_tag @vereador.avatar %>
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <div class="well vereador-sidebar">
+      <div><%= image_tag @vereador.avatar_url(:thumb) %></div>
 
+      <% if !@vereador.nome.blank? %>
+        <div><strong>Nome:</strong> <%= @vereador.nome%></div>
+      <% end %>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @vereador.nome %>
-</p>
+      <% if !@vereador.partido.blank? %>
+        <div><strong>Partido:</strong> <%= @vereador.partido %></div>
+      <% end %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @vereador.email %>
-</p>
+      <h6>FALE COM SEU VEREADOR</h6>
 
-<p>
-  <strong>Facebook:</strong>
-  <%= @vereador.facebook %>
-</p>
+      <% if !@vereador.telefone.blank? %>
+        <div><strong>Telefone:</strong> <%= @vereador.telefone %></div>
+      <% end %>
 
-<p>
-  <strong>Twitter:</strong>
-  <%= @vereador.twitter %>
-</p>
+      <% if !@vereador.email.blank? %>
+        <div><strong>E-mail:</strong> <%= @vereador.email %></div>
+      <% end %>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @vereador.descricao %>
-</p>
+      <% if !@vereador.site.blank? %>
+        <div><strong>Site:</strong><%= @vereador.site %></div>
+      <% end %>
 
-<p>
-  <strong>Mesa diretora:</strong>
-  <%= @vereador.mesa_diretora %>
-</p>
+      <% if @vereador.mesa_diretora? %>
+        <div><strong>Cargo:</strong><%= @vereador.cargo_mesa %></div>
+      <% end %>
 
-<p>
-  <strong>Cargo mesa:</strong>
-  <%= @vereador.cargo_mesa %>
-</p>
+      <% if !@vereador.facebook.blank? %>
+        <a href="<%= @vereador.facebook %>" target='_blank'><%= image_tag 'facebook.png' , {height: 45}%></a>
+      <% end %>
 
-<%= link_to 'Edit', edit_vereador_path(@vereador) %> |
-<%= link_to 'Back', vereadores_path %>
+      <% if !@vereador.twitter.blank? %>
+        <a href="<%= @vereador.twitter %>" target='_blank'><%= image_tag 'twitter.png' , {height: 45}%></a>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="col-md-9">
+    <% if !@vereador.descricao.blank? %>
+      <h2>Descrição</h2>
+      <div><p><%=@vereador.descricao %></p></div>
+    <% end %>
+  </div>
+</div>
+

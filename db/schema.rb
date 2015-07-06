@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702182951) do
+ActiveRecord::Schema.define(version: 20150706135424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +44,27 @@ ActiveRecord::Schema.define(version: 20150702182951) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "role"
   end
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -70,6 +87,27 @@ ActiveRecord::Schema.define(version: 20150702182951) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "galeria", force: true do |t|
+    t.string   "titulo"
+    t.string   "imagem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "legislacoes", force: true do |t|
+    t.integer  "numero"
+    t.integer  "ano"
+    t.text     "ementa"
+    t.string   "classificacao"
+    t.string   "situacao"
+    t.string   "tipo"
+    t.string   "autoria"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "revogado_por"
+  end
 
   create_table "noticias", force: true do |t|
     t.string   "titulo"
@@ -94,6 +132,27 @@ ActiveRecord::Schema.define(version: 20150702182951) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "rich_rich_images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+  end
+
+  create_table "slides", force: true do |t|
+    t.string   "titulo"
+    t.string   "subtitulo"
+    t.string   "imagem"
+    t.boolean  "publicado"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "transparencias", force: true do |t|
     t.integer  "ano"
@@ -133,6 +192,9 @@ ActiveRecord::Schema.define(version: 20150702182951) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
+    t.string   "site"
+    t.string   "partido"
+    t.string   "telefone"
   end
 
 end

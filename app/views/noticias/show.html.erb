@@ -1,20 +1,27 @@
 <div class="container">
 <section class="row">
-  <article class="just article">
-    <p class="center"><%= l @noticia.created_at, format: "%A , %d de %B, %Y" %></p>
-
-    <h2 class="post"><%= @noticia.titulo %></h2>
-    <div class="inside_margeagle_tb addthis_native_toolbox"></div>
-    <div>
-      <% if @noticia.imagem.present? %>
-      <picture class="outside_margeagle_tb block">
-        <%= image_tag @noticia.imagem.url %>
-      </picture>
-      <% end %> 
-         
-      <%= @noticia.introducao.html_safe %>
-      <%= raw @noticia.conteudo.html_safe %>
-    </div>
-  </article>
+	<div class="col-md-9">
+		<div class="noticia-main">
+		  <article>
+		    <p class="small_date_box"><%= l @noticia.created_at, format: "%A , %d de %B, %Y" %></p>
+		    <h2 class="post"><%= @noticia.titulo %><br/><small><%= @noticia.introducao.html_safe %></small></h2>
+		    <br/>
+		    <div> <%= @noticia.conteudo.html_safe %></div>
+		    
+		  </article>
+	  </div>
+  </div>
+  <div class="col-md-3">
+  	<div class="noticia-sidebar">
+	  	<% if @noticiastitle.any? %>
+	  		<h3>Ultimas Notícias</h3>
+	  		<ul>
+		  	<% @noticiastitle.each do |noticia| %>		    
+		  		<li><h6><span class="glyphicon glyphicon-chevron-right"></span><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a></h6></li>
+				<% end %>
+				</ul>
+			<% end %>
+		</div>
+  </div>
 </section>
 </div>

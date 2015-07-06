@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12 vereadorCarousel">
+    <% if @vereadores.any? %>
+      <% @vereadores.each do |vereador| %>
+        <div class="slide">
+          <%= link_to image_tag(vereador.avatar_url(:mini)), vereador %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+ 
+    

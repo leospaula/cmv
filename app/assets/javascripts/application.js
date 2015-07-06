@@ -16,22 +16,13 @@
 //= require jquery.ui.widget
 //= require turbolinks
 //= require bootstrap
-//= require summernote
 //= require landings
 //= require blueimp-gallery.min
-//= require z.jquery.fileupload
 //= require moment
 //= require fullcalendar
 //= require event-pt-br
+//= require ckeditor/init
+//= require bxslider
 
-// RailsAjax
-
-//= require jquery.history
-//= require jquery.rails-ajax
-//= require RailsAjax-Config
 
 //= require_tree .
-
-$('[data-provider="summernote"]').each(function(){
-  $(this).summernote({ });
-})

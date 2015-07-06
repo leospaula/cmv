@@ -1,0 +1,24 @@
+<%= simple_form_for(@legislacao) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :numero %>
+    <%= f.select :ano ,
+    options_for_select(Legislacao.anos, @legislacao.ano) %>
+    <%= f.input :ementa %>
+    <%= f.select :classificacao ,
+    options_for_select(Legislacao.classificacoes, @legislacao.classificacao) %>
+    <%= f.select :situacao ,
+    options_for_select(Legislacao.situacoes, @legislacao.situacao) %>
+    <%= f.input :revogado_por, :input_html => { :id => 'revogado_por' }, wrapper_html: { :id => 'revogado_por' }%>
+    <%= f.select :tipo ,
+    options_for_select(Legislacao.tipos, @legislacao.tipo) %>
+    <%= f.input :autoria %>
+    <%= f.file_field :arquivo %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

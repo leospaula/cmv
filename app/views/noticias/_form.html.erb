@@ -5,12 +5,11 @@
     <%= f.input :titulo %>
     <%= f.input :introducao %>
 
-    <%= f.input :conteudo, as: :summernote%>
-
+    <%= f.input :conteudo, :as => :ckeditor%>
     <%= f.input :permalink %>
     <%= f.input :publicado %>
-    <%= f.input :imagem %>
-    <%= f.input :publicado_em %>
+    <%= f.hidden_field :publicado_em %>
+
   </div>
 
   <div class="form-actions">

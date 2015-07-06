@@ -1,0 +1,79 @@
+class LegislacoesController < ApplicationController
+  before_action :set_legislacao, only: [:show, :edit, :update, :destroy]
+
+  # GET /legislacoes
+  # GET /legislacoes.json
+  def index
+    @legislacoes = Legislacao.all
+
+    @legislacoes = @legislacoes.where(ano: params[:ano].to_i) unless params[:ano].blank?
+
+
+    @legislacoes = @legislacoes.where(tipo: params[:tipo]) unless params[:tipo].blank?
+  end
+
+  # GET /legislacoes/1
+  # GET /legislacoes/1.json
+  def show
+  end
+
+  # GET /legislacoes/new
+  def new
+    @legislacao = Legislacao.new
+  end
+
+  # GET /legislacoes/1/edit
+  def edit
+  end
+
+  # POST /legislacoes
+  # POST /legislacoes.json
+  def create
+    @legislacao = Legislacao.new(legislacao_params)
+
+    respond_to do |format|
+      if @legislacao.save
+        format.html { redirect_to @legislacao, notice: 'Legislacao was successfully created.' }
+        format.json { render :show, status: :created, location: @legislacao }
+      else
+        format.html { render :new }
+        format.json { render json: @legislacao.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /legislacoes/1
+  # PATCH/PUT /legislacoes/1.json
+  def update
+    respond_to do |format|
+      if @legislacao.update(legislacao_params)
+        format.html { redirect_to @legislacao, notice: 'Legislacao was successfully updated.' }
+        format.json { render :show, status: :ok, location: @legislacao }
+      else
+        format.html { render :edit }
+        format.json { render json: @legislacao.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /legislacoes/1
+  # DELETE /legislacoes/1.json
+  def destroy
+    @legislacao.destroy
+    respond_to do |format|
+      format.html { redirect_to legislacoes_url, notice: 'Legislacao was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_legislacao
+      @legislacao = Legislacao.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def legislacao_params
+      params.require(:legislacao).permit(:numero, :ano, :ementa, :classificacao, :situacao, :tipo, :autoria, :arquivo)
+    end
+end

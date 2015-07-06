@@ -1,15 +1,14 @@
 class LandingsController < ApplicationController
   def index
-  	@noticias = Noticia.all
+  	@noticias = Noticia.all.publicadas
+  	@vereadores = Vereador.all
+  	@slides = Slide.all.publicados
   end
 
-  def galeria	
-  end
 
-  def intitucional
+  def institucional
+  	@vereadores = Vereador.all.cargo
   end
-
-  private
 
 
 end

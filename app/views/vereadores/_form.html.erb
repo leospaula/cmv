@@ -8,7 +8,8 @@
     <%= f.input :twitter %>
     <%= f.input :descricao %>
     <%= f.input :mesa_diretora %>
-    <%= f.input :cargo_mesa %>
+    <%= f.select :cargo_mesa, 
+    options_for_select(Vereador.cargos, @vereador.cargo_mesa) %>
     <%= f.file_field :avatar %>
   </div>
 

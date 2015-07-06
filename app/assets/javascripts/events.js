@@ -4,7 +4,13 @@
 $(document).ready(function() {
   return $("#calendar").fullCalendar({
   	lang: 'pt-br',
-  	height: 200,
+  	header: {
+        left: '',
+        center: 'prev title next',
+        right: ''
+    },
     events: '/events.json'
+
+
   });
 });

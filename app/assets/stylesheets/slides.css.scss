@@ -1,0 +1,35 @@
+// Place all the styles related to the Slides controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// CAROUSEL
+
+#myCarousel {
+h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.item{
+    background: #333;    
+    text-align: center;
+    height: 300px !important;
+    img {
+      cursor: pointer;
+    }
+}
+.carousel{
+    margin: 20px auto 0px auto;
+
+}
+
+
+img {
+  cursor: pointer;
+}
+
+.carousel-indicators {top:10px; }
+.carousel-caption {bottom: -30px; }
+}

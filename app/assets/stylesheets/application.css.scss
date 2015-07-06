@@ -10,10 +10,8 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
-*= require_tree .
 *= stub active_admin
-*= require summernote
-*= require fullcalendar
+*= require bxslider
 
 *= require_self
 */
@@ -23,9 +21,32 @@
 
 @import "bootstrap";
 
+@import "blueimp-gallery.min";
+
+@import "fullcalendar";
+
+@import "bootstrap_configuration";
+
+@import "events";
+
+@import "galeria";
+
+@import "jquery.bxslider";
+
+@import "legislacoes";
+
+@import "noticias";
+
+@import "transparencias";
+
+@import "vereadores";
+
+@import "scaffolds";
+
+@import "slides";
+
 @import "landings";
 
-@import "blueimp-gallery.min";
 
 
 //->Prelang (ui_framework:twitter_bootstrap)
@@ -44,3 +65,10 @@
 .form-user {
   max-width: 450px;
 }
+
+hr {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+
+

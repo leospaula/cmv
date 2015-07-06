@@ -9,21 +9,20 @@ class Noticia < ActiveRecord::Base
 #  field :publicado_em
 
 
-  #mount_uploader :cover, CoverUploader
 
-  belongs_to :admin_user
-
-  validates :titulo, :introducao, :conteudo, presence: true
+  validates :titulo, :conteudo, presence: true
 
   #before_create :init
   after_create :build_permalink
+
+  before_create :verify_publicado
+  before_update :verify_publicado
 
 
   
 
   def self.build params
     noticia = new params
-   	noticia.imagem = params[:imagem]
 
     if noticia.valid?
       noticia.save
@@ -38,8 +37,8 @@ class Noticia < ActiveRecord::Base
   end
 
   def build_update params
-    self.imagem = params[:imagem] if params.key?(:imagem)
     self.update_attributes(params)
+ 
 
     if self.valid?
       self
@@ -48,25 +47,25 @@ class Noticia < ActiveRecord::Base
     end
   end
 
-  def init
-    self.publicado = false
-  end
 
   def build_permalink
     self.update_attributes(permalink: "#{self.titulo.parameterize}") if self.permalink.blank?
   end
 
-  def publicar!
-    self.update_attributes(publicado_em: Time.now, publicado: true)
-  end
+  def verify_publicado
+    if (self.publicado? && self.publicado_em.blank?)
+      self.update_attributes(publicado_em: Time.now)
+    end
 
-  def despublicar!
-    self.update_attributes(publicado_em: nil, publicado: false)
+    if ( !self.publicado? && !self.publicado_em.blank?)
+      self.update_attributes(publicado_em: nil)
+    end
   end
 
 
   def update params
     self.update_attributes(params)
+
     Excetions::Model.build(noticia) unless self.valid?
   end
 

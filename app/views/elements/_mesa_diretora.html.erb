@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <ul>
+      	<% @vereadores.each do |vereadores| %>
+	      	
+		        <% if vereadores.cargo_mesa == 'Presidente' %>
+		        	<li>
+			        	<%= vereadores.cargo_mesa %>
+			          <%= link_to image_tag(vereadores.avatar_url(:mini)), vereadores %>
+			          <%= vereadores.nome %><br/>
+			          <%= vereadores.partido %>
+		          </li>
+		        <% end %>
+	        
+		        <% if vereadores.cargo_mesa == 'Vice-Presidente' %>
+		        	<li>
+			        	<%= vereadores.cargo_mesa %>
+			          <%= link_to image_tag(vereadores.avatar_url(:mini)), vereadores %>
+			          <%= vereadores.nome %><br/>
+			          <%= vereadores.partido %>
+		          </li>
+		        <% end %>
+
+		        <% if vereadores.cargo_mesa == '1º Secretario' %>
+		        	<li>
+			        	<%= vereadores.cargo_mesa %>
+			          <%= link_to image_tag(vereadores.avatar_url(:mini)), vereadores %>
+			          <%= vereadores.nome %><br/>
+			          <%= vereadores.partido %>
+		          </li>
+		        <% end %>
+
+		        <% if vereadores.cargo_mesa == '2º Secretario' %>
+		        	<li>
+			        	<%= vereadores.cargo_mesa %>
+			          <%= link_to image_tag(vereadores.avatar_url(:mini)), vereadores %>
+			          <%= vereadores.nome %><br/>
+			          <%= vereadores.partido %>
+		          </li>
+		        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div> 
+ </div>

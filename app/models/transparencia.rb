@@ -1,5 +1,5 @@
 class Transparencia < ActiveRecord::Base
-	mount_uploader :arquivo, ArquivoUploader
+	mount_uploader :arquivo, TransparenciaUploader
 
 	before_destroy :clean_s3
 

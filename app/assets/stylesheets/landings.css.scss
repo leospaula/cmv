@@ -577,10 +577,25 @@ img {
 
 //***********************************************************
 // FOOTER
+
+  #map-canvas {
+        width: 300px;
+        height: 250px;
+        background-color: #CCC;
+        padding: 30px 20px;
+      }
+
+address { 
+    display: block;
+    font-style: italic;
+    padding: 10px 20px;
+    font-size: 10px;
+}
+
 #footer-up {
   background-color: #314584;
   color: #eeeeee;
-  height: 150px;
+  height: 100px;
   margin-top: -100px;
   letter-spacing: 1px;
 
@@ -597,9 +612,10 @@ img {
 #footer-down {
   background-color: #161616;
   color: #eeeeee;
-  height: 50px;
+  height: 30px;
   letter-spacing: 1px;
-  padding: 15px;
+  padding: 5px;
+ 
 }
 //***********************************************************
 
@@ -664,125 +680,6 @@ img {
 //***********************************************************
 
 
-//***********************************************************
-// Galeria
-
-.galeria  ul {         
-          padding:0 0 0 0;
-          margin:0 0 0 0;
-
-            li {     
-                list-style:none;
-                display: inline;
-                margin-bottom:25px;
-
-                a {
-                  display: inline-block;
-
-                  img {
-                  cursor: pointer;
-                  }
-                }           
-              
-            }
-          }
-
-
-.modal-body {
-    padding:5px !important;
-}
-.modal-content {
-    border-radius:0;
-}
-.modal-dialog img {
-    text-align:center;
-    margin:0 auto;
-}
-.controls{          
-    width:50px;
-    display:block;
-    font-size:11px;
-    padding-top:8px;
-    font-weight:bold;          
-}
-.next {
-    float:right;
-    text-align:right;
-}
-
-.modal-dialog {
-        max-width:800px;
-        padding-top: 90px;
-
-}
-
-@media screen and (min-width: 768px){
-    .modal-dialog {
-        width:500px;
-        padding-top: 90px;
-    }          
-}
-@media screen and (max-width:1500px){
-    #ads {
-        display:none;
-    }
-}
-
-
-//********************************************************
-// TESTE
-
-pre {
-    counter-reset: line-numbering;
-    border: solid 1px #d9d9d9;
-    border-radius: 0;
-    background: #fff;
-    padding: 0;
-    line-height: 23px;
-    margin-bottom: 30px;
-    white-space: pre;
-    overflow-x: auto;
-    word-break: inherit;
-    word-wrap: inherit;
-}
-
-pre a::before {
-    content: counter(line-numbering);
-    counter-increment: line-numbering;
-    padding-right: 1em; /* space after numbers */
-    width: 25px;
-    text-align: right;
-    opacity: 0.7;
-    display: inline-block;
-    color: #aaa;
-    background: #eee;
-    margin-right: 16px;
-    padding: 2px 10px;
-    font-size: 13px;
-    border-right: 1px solid #dedede;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-pre a:first-of-type::before {
-    padding-top: 10px;
-    -webkit-box-shadow: 0px 1px 1px inset rgba(255, 255, 255, 0.9);
-    -moz-box-shadow: 0px 1px 1px inset rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 1px 1px inset rgba(255, 255, 255, 0.9);
-}
-
-pre a:last-of-type::before {
-    padding-bottom: 10px;
-}
-
-pre a:only-of-type::before {
-    padding: 10px;
-}
-
 
 // ********************************************************************
 // INSTITUCIONAL
@@ -827,14 +724,39 @@ pre a:only-of-type::before {
     }
   }
 
+  #tab-3 ul {
+    display: inline-block;
+
+
+    li {
+      top: 0px;
+      list-style: none;
+      display: inline-block;
+      margin: 10px 10px;
+    }
+  }
+
 
 }
 
 
 
+//*********************************************************************
+
+
+
+// ********************************************************************
+
 
 
 //**********************************************************************
+
+// INDEX PAGE
+
+.vereador_slider {
+  margin-top: 50px;
+
+}
 
 
 //**********************************************************************
@@ -945,3 +867,6 @@ pre a:only-of-type::before {
   border-color: #ddd #ddd #ddd transparent;
   *border-left-color: #ffffff;
 }
+
+
+

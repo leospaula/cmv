@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @legislacao.numero %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @legislacao.ano %>
+</p>
+
+<p>
+  <strong>Ementa:</strong>
+  <%= @legislacao.ementa %>
+</p>
+
+<p>
+  <strong>Classificacao:</strong>
+  <%= @legislacao.classificacao %>
+</p>
+
+<p>
+  <strong>Situacao:</strong>
+  <%= @legislacao.situacao %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @legislacao.tipo %>
+</p>
+
+<p>
+  <strong>Autoria:</strong>
+  <%= @legislacao.autoria %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @legislacao.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_legislacao_path(@legislacao) %> |
+<%= link_to 'Back', legislacoes_path %>
+
+<iframe src=<%= @legislacao.arquivo %> width="600" height="780" style="border: none;"> </iframe>

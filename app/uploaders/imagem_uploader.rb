@@ -3,17 +3,17 @@
 class ImagemUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  # include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-    storage :fog
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}-#{model.nome.to_s.parameterize.underscore}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}-#{model.titulo.to_s.parameterize.underscore}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -33,14 +33,19 @@ class ImagemUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [200, 200]
+    process :resize_to_fit => [200, 150]
   end
+
+  version :slide do
+    process :resize_to_fit => [604, 300]
+  end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  # def extension_white_list
-  #   %w(jpg jpeg gif png)
-  # end
+   def extension_white_list
+     %w(jpg jpeg png)
+   end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

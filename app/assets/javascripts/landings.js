@@ -17,4 +17,33 @@
                     $('#myModal .modal-body').html('');
                 });
            });  
-        })
+        });
+
+ // *********************************************
+ // Carousel
+
+$(document).ready(function(){
+  $('.vereadorCarousel').bxSlider({
+    controls: true,
+    auto: true,
+    slideWidth: 100,
+    minSlides: 2,
+    maxSlides: 5,
+    moveSlides: 1,
+    slideMargin: 5
+  });
+
+  });
+
+$(document).ready(function(){
+function initialize() {
+    var mapCanvas = document.getElementById('map-canvas');
+    var mapOptions = {
+      center: new google.maps.LatLng(-22.2449897, -43.7132976),
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+  }
+google.maps.event.addDomListener(window, 'load', initialize);
+});
