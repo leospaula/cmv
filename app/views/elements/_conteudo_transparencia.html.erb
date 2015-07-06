@@ -3,24 +3,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:ano) %></th>
       <th><%= model_class.human_attribute_name(:mes) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
-      <th><%= model_class.human_attribute_name(:arquivo) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th> Acoes</th>
     </tr>
   </thead>
   <tbody>
     <% @transparencias.each do |transparencia| %> 
      <tr>
-      <td><%= transparencia.id %></td>
       <td><%= transparencia.ano %></td>
       <td><%= transparencia.mes %></td>
       <td><%= transparencia.tipo %></td>
-      <td><%= link_to image_tag(transparencia.arquivo_url), transparencia.arquivo_url %></td>
-      <td><%=l transparencia.created_at, format: :long %></td>
       <td>
         <%= link_to transparencia_path(transparencia), :class => 'btn btn-xs', :title => "Visualizar" do %>
           <%= glyph 'info-sign' %>

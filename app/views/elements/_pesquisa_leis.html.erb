@@ -1,31 +1,55 @@
 <div class="conteiner">
   <div class="row">
-    <div class="col-md-12"><h3>Pesquisa de Leis</br><small></small></h3></div>
 
-  
-    <%= form_tag({controller: 'legislacoes', action: 'index'}, method: :get, remote: true) do %>
-        <div class="col-md-12 space-lg">
-          <div class="input-group"></div>
-            <div class="row">
-              <div class="col-md-2 col-md-offset-2">
-                <%= select_tag :ano, options_for_select(Legislacao.anos), :prompt => "Todos" , :class => 'form-control input-sm'%>
-              </div>
-              <div class="col-md-2">
-                <%= select_tag :tipo, options_for_select(Legislacao.tipos), :prompt => "Todos" , :class => 'form-control input-sm'%>
-              </div>
-              <div class="col-md-1">
-                <button class="btn btn-primary btn-sm" type="submit" id="search_submit">
-                  <i class="fa fa-search fa-lg"></i>
-                </button> 
-              </div>
+    <%= form_tag({controller: 'legislacoes', action: 'search'}, method: :get, remote: true) do %>
+      <div class="col-md-5 space-lg">
+        <h3>Pesquisa de Leis</br><small></small></h3>
+        <div class="input-group">
+            <div class="col-xs-4 lei-label">
+              <label for="ano">Numero/Ano: </label>
+            </div>
+            <div class="col-xs-4 lei-input">
+              <%= number_field_tag :numero ,params[:numero], :class => 'form-control input-sm',  placeholder: "Numero" %>
+            </div>
+            <div class="col-xs-4 lei-input">
+              <%= select_tag :ano, options_for_select(Legislacao.anos), :prompt => "Todos" , :class => 'form-control input-sm', :id => 'ano'%>
+            </div>
+            <div class="col-xs-4 lei-label">
+              <label for="classificacao">Classificacao: </label>
+            </div>
+            <div class="col-xs-5 lei-input">
+              <%= select_tag :classificacao, options_for_select(Legislacao.classificacoes), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'classificacao'%>
+            </div>
+            <div class="col-xs-4 lei-label">
+              <label for="tipo">Tipo: </label>
+            </div>
+            <div class="col-xs-5 lei-input">
+              <%= select_tag :tipo, options_for_select(Legislacao.tipos), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'tipo'%>
+            </div>
+            <div class="col-xs-4 lei-label">
+              <label for="situacao">Situacao: </label>
+            </div>
+            <div class="col-xs-5 lei-input">
+              <%= select_tag :situacao, options_for_select(Legislacao.situacoes), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'situacao'%>
+            </div>
+            <div class="col-xs-4 lei-label">
+              <label for="ementa">Ementa: </label>
+            </div>
+            <div class="col-xs-8 lei-input">
+              <%= text_field :ementa, params[:ementa], :class => 'form-control input-sm', :id => 'ementa'%><br />
+            </div>
+            <div class="col-xs-12">
+              <button class="btn btn-primary pull-right" type="submit" id="search_submit">
+                <i class="fa fa-search fa-lg"></i>
+              </button> 
             </div>
         </div>
-      <% end %>
-    <div class="col-md-12 space-lg">
-      <hr>
-      <div id="legislacao_table"><%= render partial: 'elements/conteudo_legislacao'%></div>
-
-    </div>
-   
+      </div>
+    <% end %>
+      <div class="col-md-7 space-lg">
+        <hr>
+        <div id="legislacao_table"><%= render partial: 'elements/conteudo_legislacao'%></div>
+      </div>
+  
   </div>
 </div>

@@ -3,24 +3,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:numero) %></th>
       <th><%= model_class.human_attribute_name(:ano) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
-      <th><%= model_class.human_attribute_name(:arquivo) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @legislacoes.each do |legislacao| %> 
      <tr>
-      <td><%= legislacao.id %></td>
       <td><%= legislacao.numero %></td>
       <td><%= legislacao.ano %></td>
       <td><%= legislacao.tipo %></td>
-      <td><%= link_to image_tag(legislacao.arquivo_url), legislacao.arquivo_url %></td>
-      <td><%=l legislacao.created_at, format: :long %></td>
       <td>
         <%= link_to legislacao_path(legislacao), :class => 'btn btn-xs', :title => "Visualizar" do %>
           <%= glyph 'info-sign' %>

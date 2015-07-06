@@ -1,12 +1,15 @@
-<h1>Vereadores</h1>
-<section id="vereadores">
-  <div class="row">
-    <div class="col-md-12">
-      <ul>
-        <% @vereadores.each do |vereador| %>
-          <li><%= link_to image_tag(vereador.avatar_url(:thumb)), vereador %></br><%= vereador.nome %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</section>
+<div class="row">
+   <div class="col-md-9">
+		<section id="vereadores">
+		  <h3>Vereadores</h3>
+		      <ul>
+		        <% @vereadores.each do |vereador| %>
+		          <li><%= link_to image_tag(vereador.avatar_url(:thumb)), vereador %></br><%= vereador.nome %></li>
+		        <% end %>
+		      </ul>
+		</section>
+	</div>
+	<div class="col-md-3">
+		<%= render partial: "elements/sidebar_menu" %>
+	</div>
+</div>

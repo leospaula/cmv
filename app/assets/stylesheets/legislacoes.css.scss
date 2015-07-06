@@ -1,3 +1,18 @@
 // Place all the styles related to the legislacoes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lei-label {
+	padding-left: 0px !important;
+	margin: 10px 0px !important;
+}
+
+.lei-input {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	margin: 10px 0px !important;
+
+	.input-sm {
+		padding: 3px 5px !important;
+	}
+}

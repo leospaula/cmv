@@ -22,4 +22,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular "legislacao", "legislacoes"
   inflect.irregular "imagem", "galeria"
   inflect.irregular "slide", "slides"
+  inflect.irregular "notificacao", "notificacoes"
 end

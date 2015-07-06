@@ -8,6 +8,7 @@ class Ability
     if admin_user.role == 'Administrador'
       can :manage, :all
       can :read, :all
+      can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
 
     if admin_user.role == 'Comunicacao'

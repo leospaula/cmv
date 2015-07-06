@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :notificacoes
+
   resources :slides
 
   resources :galeria
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   get 'agenda' => 'landings#agenda', :as => 'agenda_page'
 
   get 'institucional' => 'landings#institucional', :as => 'institucional_page'
+
+  match '/search', to: 'legislacoes#search', via: :get
 
   #devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     Redcarpet::Render::HTML.new(options)
   end
 
+  def after_sign_in_path_for(resource)
+    admin_root_path
+  end
+
   private
   
   #-> Prelang (user_login:devise)

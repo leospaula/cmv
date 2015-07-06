@@ -9,18 +9,25 @@
     <ol class="indicator"></ol>
 </div>
 
-<div id="links" class="galeria">
-    <ul>
-      <% if @galeria.any? %>
-        <% @galeria.each do |imagem| %>
-          <li>
-              <a href="<%= imagem.imagem_url %>" title="<%= imagem.titulo %>">
-              <img src="<%= imagem.imagem_url(:thumb) %>" alt="<%= imagem.titulo %>">
-              </a>
-          </li>
-        <% end %>
-      <% end %> 
-    </ul>
+<div class="row">
+  <div class="col-md-9">
+    <div id="links" class="galeria">
+        <ul>
+          <% if @galeria.any? %>
+            <% @galeria.each do |imagem| %>
+              <li>
+                  <a href="<%= imagem.imagem_url %>" title="<%= imagem.titulo %>">
+                  <img src="<%= imagem.imagem_url(:thumb) %>" alt="<%= imagem.titulo %>">
+                  </a>
+              </li>
+            <% end %>
+          <% end %> 
+        </ul>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <%= render partial: "elements/sidebar_menu" %>
+  </div>
 </div>
 
 <script>

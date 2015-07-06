@@ -3,6 +3,7 @@ class LandingsController < ApplicationController
   	@noticias = Noticia.all.publicadas
   	@vereadores = Vereador.all
   	@slides = Slide.all.publicados
+  	@notificacao = Notificacao.ultima
   end
 
 

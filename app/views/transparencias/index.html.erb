@@ -1,6 +1,6 @@
 <div class="conteiner">
   <div class="row">
-  	<div class="col-md-12"><h3>Portal da Transparência</br><small>Os Balancetes e Execução das Despesas Mensais, aqui disponibilizados, foram gerados pelo Sistema de Contabilidade da Câmara.</small></h3></div>
+  	<div class="col-md-12"><h3>Portal da Transparência</br><small>Os Balancetes e Execução das Despesas Mensais, aqui disponibilizados, foram gerados pelo Sistema de Contabilidade da Câmara.</small></h3></div><br/>
 
 	
     <%= form_tag({controller: 'transparencias', action: 'index'}, method: :get, remote: true) do %>
@@ -24,7 +24,7 @@
             </div>
         </div>
       <% end %>
-    <div class="col-md-12 space-lg">
+    <div class="col-md-8 col-md-offset-2 space-lg">
     	<hr>
       <div id="transparencia_table"><%= render partial: 'elements/conteudo_transparencia'%></div>
 

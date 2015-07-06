@@ -1,6 +1,6 @@
 
 <div class="row container">
-	<div class="col-md-10 index-noticias">
+	<div class="col-md-9 index-noticias">
 		<hr>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -37,23 +37,45 @@
 		  </div>
 		</div>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		<hr>
 		<h5>TV Camara</h5>
+		<div class="tv-camara-index">
+			<%= image_tag("tv_camara.jpg")%>
+		</div>
+		<hr>
+		<div class="sidebar">
+			<%= render partial: "elements/sidebar_menu" %>
+		</div>
+
 	</div>
 </div>
 
 <div class="row container">
-	<div class="col-md-10">
-		<hr>
-		<h5>Vereadores</h5>
-		<div class="vereador_slider">
-			<%= render partial: "elements/vereador_slide" %>
+	<% if @notificacao.any? %>
+		<div class="col-md-9">
+			<hr>
+			<h5>Vereadores</h5>
+			<div class="vereador_slider">
+				<%= render partial: "elements/vereador_slide" %>
+			</div>
 		</div>
-	</div>
-	<div class="col-md-2">
-		<hr>
-		<h5>Calendario</h5>
-		<div id="calendar"></div>
-	</div>
+		<div class="col-md-3">
+			<hr>
+			<div class="well">
+				<% @notificacao.each do |notificacao| %>
+					<p><strong><%= notificacao.titulo %></strong></p>
+					<p><%= notificacao.conteudo %></p>
+				<% end %>
+			</div>
+		</div>
+	<% else %>
+		<div class="col-md-12">
+			<hr>
+			<h5>Vereadores</h5>
+			<div class="vereador_slider">
+				<%= render partial: "elements/vereador_slide" %>
+			</div>
+		</div>
+	<% end %>
 </div>

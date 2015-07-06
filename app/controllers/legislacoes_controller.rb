@@ -5,11 +5,25 @@ class LegislacoesController < ApplicationController
   # GET /legislacoes.json
   def index
     @legislacoes = Legislacao.all
+  end
+
+  def search
+    @legislacoes = Legislacao.all
+    
+    @legislacoes = @legislacoes.where(numero: params[:numero].to_i) unless params[:numero].blank?
 
     @legislacoes = @legislacoes.where(ano: params[:ano].to_i) unless params[:ano].blank?
 
+    @legislacoes = @legislacoes.where(classificacao: params[:classificacao]) unless params[:classificacao].blank?
 
     @legislacoes = @legislacoes.where(tipo: params[:tipo]) unless params[:tipo].blank?
+
+    @legislacoes = @legislacoes.where(situacao: params[:situacao]) unless params[:situacao].blank?
+    
+    if !params[:ementa][0].blank?
+      ementa_search = params[:ementa][0]
+      @legislacoes = @legislacoes.where("ementa ILIKE ?", "%#{ementa_search}%")
+    end
   end
 
   # GET /legislacoes/1
