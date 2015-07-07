@@ -474,7 +474,8 @@ $space-xs: 10px;
   }
 
   ul li {
-    padding: 0px 0px;
+    padding: 0px 20px;
+    font-size: 15px;
 
     a:hover {
       background-color: $navbar-default-link-hover-bg;

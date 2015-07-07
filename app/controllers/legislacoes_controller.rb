@@ -4,7 +4,7 @@ class LegislacoesController < ApplicationController
   # GET /legislacoes
   # GET /legislacoes.json
   def index
-    @legislacoes = Legislacao.all
+    @legislacoes = Legislacao.all.paginate(page: params[:page], per_page: 10)
   end
 
   def search
@@ -24,6 +24,8 @@ class LegislacoesController < ApplicationController
       ementa_search = params[:ementa][0]
       @legislacoes = @legislacoes.where("ementa ILIKE ?", "%#{ementa_search}%")
     end
+
+    @legislacoes = @legislacoes.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /legislacoes/1

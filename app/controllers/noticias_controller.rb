@@ -1,7 +1,7 @@
 class NoticiasController < InheritedResources::Base
 
 	def index
-    	@noticias = Noticia.all.publicadas.limit(4)
+    	@noticias = Noticia.all.publicadas.paginate(page: params[:page], per_page: 5)
     	@noticiastitle = Noticia.all.publicadas.limit(6)
   	end
 

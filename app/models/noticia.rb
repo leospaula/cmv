@@ -33,7 +33,7 @@ class Noticia < ActiveRecord::Base
   end
 
   def self.publicadas
-    where(publicado: true).order('created_at DESC')
+    all.where(publicado: true).order('created_at DESC')
   end
 
   def build_update params

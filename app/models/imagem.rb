@@ -3,6 +3,8 @@ class Imagem < ActiveRecord::Base
 
 	before_destroy :clean_s3
 
+	validates :titulo, :imagem, presence: true
+
 
 	private
 	  def clean_s3

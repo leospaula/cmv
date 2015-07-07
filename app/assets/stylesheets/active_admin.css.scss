@@ -11,11 +11,11 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
-$skinLogo: url("admin_logo.png") no-repeat 0 0;
+$skinLogo: url("logo_admin_area.png") no-repeat 0 0;
 
-$skinActiveColor: #001cee;
-$skinHeaderBck: #002744;
-$panelHeaderBck: #002744;
+$skinActiveColor: #4a6ea9;
+$skinHeaderBck: #314681;
+$panelHeaderBck: #314681;
 
 @import "active_skin";
 

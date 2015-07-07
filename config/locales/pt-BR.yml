@@ -303,3 +303,15 @@ pt-BR:
       block: "Lista"
       grid: "Grid"
       blog: "Blog"
+  will_paginate:
+    previous_label: "Anterior"
+    next_label: "Proximo"
+
+  devise:
+    sessions:
+      admin_user:
+        signed_in: "Usuário Logado com Sucesso"
+
+    failure:
+      admin_user:
+        unauthenticated: "Usuário não autenticado"

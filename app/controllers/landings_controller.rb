@@ -1,9 +1,9 @@
 class LandingsController < ApplicationController
   def index
-  	@noticias = Noticia.all.publicadas
+  	@noticias = Noticia.publicadas
   	@vereadores = Vereador.all
-  	@slides = Slide.all.publicados
-  	@notificacao = Notificacao.ultima
+  	@slides = Slide.publicados
+  	@notificacao = Notificacao.ultima_publicada
   end
 
 

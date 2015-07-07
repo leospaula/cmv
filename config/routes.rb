@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :legislacoes
 
-  resources :transparencias
+  resources :transparencias do 
+    get 'download' => 'transparencias#download_file'
+  end
+
 
 
   resources :events

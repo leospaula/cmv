@@ -42,6 +42,9 @@ gem 'bundler'
 
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
 gem 'bootstrap-sass-extras'
+gem 'will_paginate-bootstrap'
+
+
 gem 'rails_config'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'
@@ -67,7 +70,6 @@ gem 'fog'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
-gem 'rails-ajax'
 
 gem 'ckeditor'
 gem 'bxslider-rails'
@@ -96,6 +98,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
 end
+
 
 group :development, :test do
   gem 'dotenv-rails'

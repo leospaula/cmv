@@ -3,6 +3,9 @@ class Transparencia < ActiveRecord::Base
 
 	before_destroy :clean_s3
 
+	validates :ano, :mes, :tipo, :arquivo, presence: true
+	validates :mes, uniqueness: { scope: :ano }
+
 
 	def self.anos
   		anos = %w[2010 2011 2012 2013 2014 2015 2016 2017 2018]

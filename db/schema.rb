@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706173950) do
+ActiveRecord::Schema.define(version: 20150707004320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150706173950) do
     t.text     "conteudo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "publicado"
   end
 
   create_table "posts", force: true do |t|
@@ -139,6 +140,18 @@ ActiveRecord::Schema.define(version: 20150706173950) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "rich_rich_images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+  end
 
   create_table "slides", force: true do |t|
     t.string   "titulo"

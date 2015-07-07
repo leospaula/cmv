@@ -6,7 +6,31 @@
 
 
 .vereador-sidebar{
+
 	img {
-		margin: 5px auto;
+			margin: 5px auto;  
+		}
+
+	.social-link {
+		img {
+			margin: 5px auto;
+        	height: 40px;  
+		}
+	}
+	
+}
+
+#vereadores {
+	ul {
+		list-style: none;
+
+		li {
+			display: inline-block;
+			margin: 10px 10px;
+
+			.nome {
+				margin: 5px 0px;
+			}
+		}
 	}
 }

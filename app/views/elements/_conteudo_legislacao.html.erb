@@ -16,15 +16,12 @@
       <td><%= legislacao.ano %></td>
       <td><%= legislacao.tipo %></td>
       <td>
-        <%= link_to legislacao_path(legislacao), :class => 'btn btn-xs', :title => "Visualizar" do %>
-          <%= glyph 'info-sign' %>
-          <%= glyph 'pencil' %>
-        <%- end -%>
-        <%= link_to legislacao_path(legislacao), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "Deletar" do %>
-          <%= glyph 'remove' %>
+        <%= link_to legislacao.arquivo_url, :target => '_blank', :class => 'btn btn-md', :title => "Visualizar" do %>
+          <%= glyph 'download-alt' %>
         <%- end -%>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @legislacoes, renderer: BootstrapPagination::Rails %>

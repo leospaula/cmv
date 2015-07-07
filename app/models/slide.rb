@@ -3,8 +3,10 @@ class Slide < ActiveRecord::Base
 
 	before_destroy :clean_s3
 
+	validates :titulo, :imagem, presence: true
+
 	def self.publicados
-    where(publicado: true)
+    all.where(publicado: true)
   end
 
 

@@ -3,6 +3,8 @@ class Vereador < ActiveRecord::Base
 
 	before_destroy :clean_s3
 
+	validates :nome, :email, :descricao, :situacao, :tipo, :arquivo, presence: true
+
 	def self.cargos
   		tipos = ['Presidente','Vice-Presidente','1º Secretario','2º Secretario']
   end

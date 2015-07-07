@@ -16,27 +16,27 @@
       <h6>FALE COM SEU VEREADOR</h6>
 
       <% if !@vereador.telefone.blank? %>
-        <div><strong>Telefone:</strong> <%= @vereador.telefone %></div>
+        <div><i class="fa fa-phone"></i> <%= @vereador.telefone %></div>
       <% end %>
 
       <% if !@vereador.email.blank? %>
-        <div><strong>E-mail:</strong> <%= @vereador.email %></div>
+        <div><i class="fa fa-at"></i> <%= @vereador.email.downcase %></div>
       <% end %>
 
       <% if !@vereador.site.blank? %>
-        <div><strong>Site:</strong><%= @vereador.site %></div>
+        <div><i class="fa fa-home"></i> <%= @vereador.site.downcase %></div>
       <% end %>
 
       <% if @vereador.mesa_diretora? %>
-        <div><strong>Cargo:</strong><%= @vereador.cargo_mesa %></div>
+        <div><i class="fa fa-user"></i> <%= @vereador.cargo_mesa %></div>
       <% end %>
 
       <% if !@vereador.facebook.blank? %>
-        <a href="<%= @vereador.facebook %>" target='_blank'><%= image_tag 'facebook.png' , {height: 45}%></a>
+        <a href="<%= @vereador.facebook %>" target='_blank' class='social-link'><%= image_tag 'facebook.png' %></a>
       <% end %>
 
       <% if !@vereador.twitter.blank? %>
-        <a href="<%= @vereador.twitter %>" target='_blank'><%= image_tag 'twitter.png' , {height: 45}%></a>
+        <a href="<%= @vereador.twitter %>" target='_blank' class='social-link'><%= image_tag 'twitter.png' %></a>
       <% end %>
     </div>
 

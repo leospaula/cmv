@@ -1,20 +1,23 @@
 ActiveAdmin.register Notificacao do
-	permit_params :titulo, :conteudo
+	permit_params :titulo, :conteudo, :publicado
 
 	index do
 		column :titulo
 		column :conteudo
+		column :publicado
 		column :created_at
 		actions
 	end
 
 	filter :titulo
+	filter :publicado
 
 
   form do |f|
-    f.inputs "Inserir Slide na Pagina Inicial" do
+    f.inputs "Inserir Notificação na Pagina Inicial" do
       f.input :titulo
       f.input :conteudo
+      f.input :publicado
     end
     f.actions
   end

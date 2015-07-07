@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+AdminUser.create!(:email => 'admin@camara.com', :password => 'password', :password_confirmation => 'password', :role => 'Administrador') 
+AdminUser.create!(:email => 'contabilidade@camara.com', :password => 'password', :password_confirmation => 'password', :role => 'Contabilidade') 
+AdminUser.create!(:email => 'comunicacao@camara.com', :password => 'password', :password_confirmation => 'password', :role => 'Comunicacao') 
+AdminUser.create!(:email => 'legislativo@camara.com', :password => 'password', :password_confirmation => 'password', :role => 'Legislativo') 
