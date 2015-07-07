@@ -6,8 +6,7 @@
 		        <% @vereadores.each do |vereador| %>
 		          <li><%= link_to image_tag(vereador.avatar_url(:thumb), :class => 'img-thumbnail'), vereador %><br/>
 		          	<div class="nome">
-		              <strong><%= vereador.nome %></strong>
-		              <strong>(<%= vereador.partido %>)</strong>
+		              <h5><%= vereador.nome %></br><small><strong><%= vereador.partido %></strong></small></h5>
 		            </div>
 		          </li>
 		        <% end %>

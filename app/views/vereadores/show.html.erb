@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-3">
     <div class="well vereador-sidebar">
-      <div><%= image_tag @vereador.avatar_url(:thumb) %></div>
+      <div><%= image_tag @vereador.avatar_url(:thumb), :class => 'img-thumbnail' %></div>
 
       <% if !@vereador.nome.blank? %>
         <div><strong>Nome:</strong> <%= @vereador.nome%></div>
@@ -32,11 +32,11 @@
       <% end %>
 
       <% if !@vereador.facebook.blank? %>
-        <a href="<%= @vereador.facebook %>" target='_blank' class='social-link'><%= image_tag 'facebook.png' %></a>
+        <a href="<%= @vereador.facebook %>" target='_blank' class='social-link text-center'><%= image_tag 'facebook.png' %></a>
       <% end %>
 
       <% if !@vereador.twitter.blank? %>
-        <a href="<%= @vereador.twitter %>" target='_blank' class='social-link'><%= image_tag 'twitter.png' %></a>
+        <a href="<%= @vereador.twitter %>" target='_blank' class='social-link text-center'><%= image_tag 'twitter.png' %></a>
       <% end %>
     </div>
 
