@@ -11,5 +11,9 @@ class LandingsController < ApplicationController
   	@vereadores = Vereador.all.cargo
   end
 
+  def regimento
+  	
+  end
+
 
 end

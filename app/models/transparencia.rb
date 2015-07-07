@@ -4,7 +4,7 @@ class Transparencia < ActiveRecord::Base
 	before_destroy :clean_s3
 
 	validates :ano, :mes, :tipo, :arquivo, presence: true
-	validates :mes, uniqueness: { scope: :ano }
+	validates :mes, uniqueness: { scope: [:ano, :tipo] }
 
 
 	def self.anos

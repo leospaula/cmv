@@ -10,7 +10,7 @@ class TransparenciasController < InheritedResources::Base
 
 		@transparencias = @transparencias.where(tipo: params[:tipo]) unless params[:tipo].blank?
 
-		@transparencias = @transparencias.paginate(page: params[:page], per_page: 2)
+		@transparencias = @transparencias.paginate(page: params[:page], per_page: 10)
 
 	end
 

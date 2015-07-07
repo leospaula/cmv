@@ -3,7 +3,7 @@ class Legislacao < ActiveRecord::Base
 
 	before_destroy :clean_s3
 
-  validates :ano, :ementa, :classificacao, :partido, :avatar, presence: true
+  validates :ano, :ementa, :classificacao, :tipo, :situacao, :arquivo, presence: true
   validates :numero, presence: true,
     numericality: {greater_than: 0}
 
@@ -16,12 +16,13 @@ class Legislacao < ActiveRecord::Base
   	end
 
   	def self.classificacoes
-  		classificacoes = ['Saude','Educação', 'Créditos', 'Suplementares', 'Orçamentário', 'Logradouros Públicos', 'Títulos', 'Utilidade Pública', 'Transporte', 'Outros']
+  		classificacoes = ['Saude','Educação', 'Créditos', 'Orçamentário', 'Logradouros Públicos', 'Títulos', 'Utilidade Pública', 'Transporte', 'Outros']
   	end
 
   	def self.tipos
-  		tipos = ['Lei Ordinário','Lei Complementar','Decreto Legislativo', 'Resoluções', 'Emenda a Lei Orgânica']
+  		tipos = ['Lei Ordinária','Lei Complementar','Decreto Legislativo', 'Resolução', 'Emenda a Lei Orgânica']
   	end
+
 
 	private
 	  def clean_s3

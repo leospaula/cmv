@@ -37,7 +37,7 @@ class ImagemUploader < CarrierWave::Uploader::Base
   end
 
   version :slide do
-    process :resize_to_fit => [604, 300]
+    process :resize_to_fit => [540, 300]
   end
 
 

@@ -59,7 +59,7 @@ Rails.application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w( bx_loader.gif controls.png )
+  config.assets.precompile += %w( bx_loader.gif controls.png favicon.ico)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -83,6 +83,14 @@ Rails.application.configure do
 
   #->Prelang
   GA.tracker = ""
+
+  Time::DATE_FORMATS[:header] = "%d de %b de %Y"
+
+  # Include your application configuration below
+  Date::MONTHNAMES = [nil] + %w(Janeiro Fevereiro MarÃ§o Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)
+  Date::DAYNAMES = %w(Domingo Segunda Terça Quarta Quinta Sexta Sábado)
+  Date::ABBR_MONTHNAMES = [nil] + %w(Jan Fev Mar Abr Mai Jun Jul Aug Set Out Nov Dez)
+  Date::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sab)
 
 end
 

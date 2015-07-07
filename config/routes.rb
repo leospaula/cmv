@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get 'institucional' => 'landings#institucional', :as => 'institucional_page'
 
+  get 'regimento' => 'landings#regimento', :as => 'regimento_page'
+
   match '/search', to: 'legislacoes#search', via: :get
 
   #devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
