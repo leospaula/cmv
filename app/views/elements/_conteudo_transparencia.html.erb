@@ -6,7 +6,7 @@
       <th><%= model_class.human_attribute_name(:ano) %></th>
       <th><%= model_class.human_attribute_name(:mes) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
-      <th>Download</th>
+      <th>Visualizar</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +16,7 @@
       <td><%= transparencia.mes %></td>
       <td><%= transparencia.tipo %></td>
       <td>
-        <%= link_to transparencia.arquivo_url, :target => '_blank', :class => 'btn btn-xs', :title => "Visualizar" do %>
+        <%= link_to transparencia.arquivo_url, :target => '_blank', :class => 'btn btn-xs btn-primary download-link', :title => "Visualizar" do %>
           <%= glyph 'download-alt' %>
         <%- end -%>
       </td>

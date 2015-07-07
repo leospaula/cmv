@@ -4,15 +4,47 @@
 
 .lei-label {
 	padding-left: 0px !important;
-	margin: 10px 0px !important;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	position: relative;
+    left: -10px;
 }
 
 .lei-input {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
-	margin: 10px 0px !important;
 
 	.input-sm {
 		padding: 3px 5px !important;
+	}
+}
+
+.box-search {
+	border: 1px solid #dddddd;
+	padding: 10px 15px !important;
+}
+
+.lei-data {
+	border: 1px solid #dddddd;
+	padding: 10px 10px !important;
+	margin: 10px 0px;
+
+	.item {
+		.destaque {
+			color: #314584;
+		}
+
+		.destaque-first {
+			color: #314682;
+		}
+
+		.download-link {
+      		color: #ffffff;
+
+      		
+		}
+		.btn:hover {
+			background-color: #314584 !important;
+		}
 	}
 }
