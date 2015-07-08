@@ -1,28 +1,21 @@
 <footer>
-  <div id="footer-up">
+ 
+        <div class="col-md-12 text-center" id="footer-up">
+          <address>
+            Câmara Municipal de Valença<br> 
+            Praça XV de Novembro, 676 - Centro<br>
+            Valença-RJ - CEP: 27600-000<br>
+            Tel.: (24) 2453-3199 / (24) 2453-3777<br>
+            Fax: (24) 2453-4825
+          </address>
+        </div>
 
-      <div class="row text-center">
-          <div class="col-md-12">
-            <address>
-              Câmara Municipal de Valença<br> 
-              Praça XV de Novembro, 676 - Centro<br>
-              Valença-RJ - CEP: 27600-000<br>
-              Tel.: (24) 2453-3199 / (24) 2453-3777<br>
-              Fax: (24) 2453-4825
-            </address>
-          </div>
-      </div>
-  </div>
 
-  <div id="footer-down">
-      <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="footer-down">
           <p><small>
             &copy; <%= Time.now.year %> - Camara Municipal de Valença - Todos os direitos reservados
           </small></p>
         </div>
-      </div>
-  </div>
 
 
   <% if Rails.env == "production" %>

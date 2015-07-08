@@ -1,7 +1,7 @@
 <% if !@legislacoes.blank? %>
   <% @legislacoes.each do |legislacao| %>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
       <div class="lei-data">
 
         <div class="row">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-8 item">
+          <div class="col-md-10 item">
             <% body_text = truncate(legislacao.ementa, :length=>250) %>
             <p><strong class="destaque">Ementa: </strong><%= body_text.html_safe %></p>
           </div>
