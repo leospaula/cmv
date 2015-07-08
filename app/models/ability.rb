@@ -13,7 +13,9 @@ class Ability
 
     if admin_user.role == 'Comunicacao'
       can :manage, Noticia
+      can :manage, Event
       can :read, Noticia
+      can :read, Event
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
 
@@ -25,8 +27,8 @@ class Ability
     end
 
     if admin_user.role == 'Legislativo'
-      can :manage, Legislativo
-      can :read, Legislativo
+      can :manage, Legislacao
+      can :read, Legislacao
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
 
