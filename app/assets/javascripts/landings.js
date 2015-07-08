@@ -26,6 +26,8 @@ $(document).ready(function(){
   $('.vereadorCarousel').bxSlider({
     controls: true,
     auto: true,
+    pause: 1,
+    speed: 1000,
     slideWidth: 100,
     minSlides: 2,
     maxSlides: 5,
