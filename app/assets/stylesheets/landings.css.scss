@@ -14,7 +14,7 @@ $brand-danger: #d9534f;
 $brand-info: #5bc0de;
 
 // Body scaffolding
-$body-bg: #ffffff;
+$body-bg: #D3D3D3;
 $text-color: #373737;
 $link-color: $brand-primary;
 $link-hover-color: darken($link-color, 15%);
@@ -353,9 +353,13 @@ html,body {
   height: 100%;
 }
 
+.white-background {
+  background-color: #ffffff !important;
+}
+
 #wrap {
   min-height: 100%;
-  padding-bottom: 120px;
+  padding-bottom: 0px;
 }
 
 blockquote{
@@ -468,6 +472,7 @@ $space-xs: 10px;
   background-image: linear-gradient(#f7f7f7, #f2f2f2);
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #279142;
+  margin-bottom: 0px !important;
 
   i.fa{
     color: #279142;
@@ -597,7 +602,6 @@ address {
   background-color: #314584;
   color: #eeeeee;
   height: 100px;
-  margin-top: -100px;
   letter-spacing: 1px;
 
   ul {

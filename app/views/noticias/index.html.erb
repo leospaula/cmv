@@ -1,10 +1,8 @@
-<div class="container">
 <section class="row">
   <div class="col-md-9">
     <div class="noticia-main">
       <% if @noticias.any? %>
         <% @noticias.each do |noticia| %>
-
           <%
             orig_text = noticia.conteudo
             img_text  = orig_text[/<img[^>]+>/].to_s 
@@ -27,8 +25,8 @@
   </div>
   <div class="col-md-3">
     <div class="noticia-sidebar">
-      <% if @noticiastitle.any? %>
-        <h3>Ultimas Notícias</h3>
+      <h3>Ultimas Notícias</h3>
+      <% if @noticiastitle.any? %> 
         <ul>
         <% @noticiastitle.each do |noticia| %>        
           <li><h6><span class="glyphicon glyphicon-chevron-right"></span><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a></h6></li>
@@ -38,4 +36,3 @@
     </div>
   </div>
 </section>
-</div>
