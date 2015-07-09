@@ -34,7 +34,7 @@ img {
 .carousel-indicators {top:10px; }
 .carousel-caption {bottom: -30px; }
 }
-
+//*****************************************************
 
 .carousel-fade {
   .carousel-inner {
@@ -63,6 +63,48 @@ img {
   .carousel-control {
     z-index: 2;
   }
+}
+
+//*****************************************************
+#headerCarousel {
+
+.item{
+    background: #333;    
+    height: 250px !important;
+    img {
+      width: 1140px !important;
+    }
+}
+.carousel{
+    margin: 20px auto 0px auto;
+
+}
+
+
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+    }
+
+    .active {
+      opacity: 1;
+    }
+
+    .active.left,
+    .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+  }
+}
 }
 
 

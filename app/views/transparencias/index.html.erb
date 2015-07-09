@@ -1,36 +1,32 @@
-<div class="conteiner">
-  <div class="row">
-  	<div class="col-md-12"><h3>Portal da Transparência</br><small>Os Balancetes e Execução das Despesas Mensais, aqui disponibilizados, foram gerados pelo Sistema de Contabilidade da Câmara.</small></h3></div><br/>
+<div class="row container">
+	<div class="col-md-12"><h3>Portal da Transparência</br><small>Os Balancetes e Execução das Despesas Mensais, aqui disponibilizados, foram gerados pelo Sistema de Contabilidade da Câmara.</small></h3></div><br/>
 
-	
-    <%= form_tag({controller: 'transparencias', action: 'index'}, method: :get, remote: true) do %>
-        <div class="col-md-12 space-lg">
-          <div class="input-group"></div>
-            <div class="row">
-              <div class="col-md-2 col-md-offset-2">
-                <%= select_tag :ano, options_for_select(Transparencia.anos), :prompt => "Todos" , :class => 'form-control input-sm'%>
-              </div>
-              <div class="col-md-2">
-                <%= select_tag :mes, options_for_select(Transparencia.meses), :prompt => "Todos" , :class => 'form-control input-sm' %>
-              </div>
-              <div class="col-md-2">
-                <%= select_tag :tipo, options_for_select(Transparencia.tipos), :prompt => "Todos" , :class => 'form-control input-sm'%>
-              </div>
-          	  <div class="col-md-1">
-                <button class="btn btn-primary btn-sm" type="submit" id="search_submit">
-                  <i class="fa fa-search fa-lg"></i>
-                </button> 
-              </div>
+
+  <%= form_tag({controller: 'transparencias', action: 'index'}, method: :get, remote: true) do %>
+      <div class="col-md-12 space-lg">
+        <div class="input-group"></div>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-2">
+              <%= select_tag :ano, options_for_select(Transparencia.anos), :prompt => "Todos" , :class => 'form-control input-sm'%>
             </div>
-        </div>
-      <% end %>
-    <div class="col-md-8 col-md-offset-2 space-lg">
-    	<hr>
-      <div id="transparencia_table"><%= render partial: 'elements/conteudo_transparencia'%></div>
-
-    </div>
-   
-  </div>
+            <div class="col-md-2">
+              <%= select_tag :mes, options_for_select(Transparencia.meses), :prompt => "Todos" , :class => 'form-control input-sm' %>
+            </div>
+            <div class="col-md-2">
+              <%= select_tag :tipo, options_for_select(Transparencia.tipos), :prompt => "Todos" , :class => 'form-control input-sm'%>
+            </div>
+        	  <div class="col-md-1">
+              <button class="btn btn-primary btn-sm" type="submit" id="search_submit">
+                <i class="fa fa-search fa-lg"></i>
+              </button> 
+            </div>
+          </div>
+      </div>
+    <% end %>
+  <div class="col-md-8 col-md-offset-2 space-lg">
+  	<hr>
+    <div id="transparencia_table"><%= render partial: 'elements/conteudo_transparencia'%></div>
+  </div>  
 </div>
 
 

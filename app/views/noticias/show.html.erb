@@ -1,5 +1,4 @@
-<div class="container">
-<section class="row">
+<section class="row container">
 	<div class="col-md-9">
 		<div class="noticia-main">
 		  <article>
@@ -12,16 +11,6 @@
 	  </div>
   </div>
   <div class="col-md-3">
-  	<div class="noticia-sidebar">
-	  	<% if @noticiastitle.any? %>
-	  		<h3>Ultimas Notícias</h3>
-	  		<ul>
-		  	<% @noticiastitle.each do |noticia| %>		    
-		  		<li><h6><span class="glyphicon glyphicon-chevron-right"></span><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a></h6></li>
-				<% end %>
-				</ul>
-			<% end %>
-		</div>
+  	<%= render partial: "elements/sidebar_menu" %>
   </div>
 </section>
-</div>

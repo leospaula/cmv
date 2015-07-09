@@ -353,8 +353,8 @@ html,body {
   height: 100%;
 }
 
-.white-background {
-  background-color: #ffffff !important;
+.body-background {
+  background-color: #fcfcfc !important;
 }
 
 #wrap {
@@ -464,8 +464,6 @@ $space-xs: 10px;
 .navbar-brand {
   font-size: inherit;
 }
-
-
 
 #menu {
 
@@ -643,8 +641,12 @@ address {
 }
 
 #header {
-  background-color: #fcfcfc;
+//  background-color: #fcfcfc;
   height: 250px;
+  background: url('vista_cidade3.jpg') no-repeat;
+  -webkit-box-shadow: 0 0px 0px 0px black, 0 0px 0px 0px black,inset 330px 0 50px -4px rgba(255,255,255,0.99);
+  -moz-box-shadow: 0 0px 0px 0px black, 0 0px 0px 0px black,inset 330px 0 50px -4px rgba(255,255,255,0.99);
+  box-shadow: 0 0px 0px 0px black, 0 0px 0px 0px black,inset 330px 0 100px -4px rgba(255,255,255,0.99);
 }
 
 #logo{
@@ -652,7 +654,6 @@ address {
 
   a {
     
-
     img {
       height: 150px; 
     }
@@ -709,6 +710,7 @@ address {
 }
 
 .menu-side{ 
+  margin-top: 20px;
   .header {
     background-color: #314584 !important;
   }

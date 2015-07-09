@@ -1,4 +1,4 @@
-<section class="row">
+<section class="row container">
   <div class="col-md-9">
     <div class="noticia-main">
       <% if @noticias.any? %>
@@ -10,7 +10,7 @@
           %>
           <div>
             <article class="just article">
-              <span class="small_date_box"><%= l noticia.publicado_em, format: "%d de %B, %Y"%></span>
+              <span class="small_date_box"><%= l noticia.publicado_em, format: "%d/%b"%></span>
               <h3 class="post"><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a><br/><small><p><%= noticia.introducao.html_safe %></p></small></h3>
 
               <p><%= body_text.html_safe %></p>
@@ -24,15 +24,6 @@
 <%= will_paginate @noticias, renderer: BootstrapPagination::Rails %>
   </div>
   <div class="col-md-3">
-    <div class="noticia-sidebar">
-      <h3>Ultimas Notícias</h3>
-      <% if @noticiastitle.any? %> 
-        <ul>
-        <% @noticiastitle.each do |noticia| %>        
-          <li><h6><span class="glyphicon glyphicon-chevron-right"></span><a href="/noticias/<%= noticia.to_url %>"> <%= noticia.titulo %></a></h6></li>
-        <% end %>
-        </ul>
-      <% end %>
-    </div>
+    <%= render partial: "elements/sidebar_menu" %>
   </div>
 </section>
