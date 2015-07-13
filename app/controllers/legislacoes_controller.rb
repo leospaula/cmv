@@ -95,6 +95,6 @@ class LegislacoesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def legislacao_params
-      params.require(:legislacao).permit(:numero, :ano, :ementa, :classificacao, :situacao, :tipo, :autoria, :arquivo)
+      params.require(:legislacao).permit(:numero, :ano, :ementa, :classificacao, :situacao, :tipo, :autoria, :arquivo, :publicacao)
     end
 end

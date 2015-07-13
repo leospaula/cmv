@@ -14,7 +14,7 @@ index do
 
 
   form do |f|
-    f.inputs "Inserir Lei" do
+    f.inputs "Inserir" do
       f.input :ano, :as => :select, :collection => Transparencia.anos
       f.input :mes, :as => :select, :collection => Transparencia.meses
       f.input :tipo, :as => :select, :collection => Transparencia.tipos

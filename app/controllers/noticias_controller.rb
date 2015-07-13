@@ -2,11 +2,9 @@ class NoticiasController < InheritedResources::Base
 
 	def index
     	@noticias = Noticia.all.publicadas.paginate(page: params[:page], per_page: 5)
-    	@noticiastitle = Noticia.all.publicadas.limit(6)
   	end
 
 	def show
-		@noticiastitle = Noticia.all.publicadas.limit(6)
     	@noticia = Noticia.find_by(permalink: params[:id])
   	end
 

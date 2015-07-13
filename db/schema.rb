@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707004320) do
+ActiveRecord::Schema.define(version: 20150713034216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20150707004320) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "revogado_por"
+    t.string   "publicacao"
   end
 
   create_table "noticias", force: true do |t|
@@ -128,18 +129,6 @@ ActiveRecord::Schema.define(version: 20150707004320) do
     t.datetime "updated_at"
     t.boolean  "publicado"
   end
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "article"
-    t.boolean  "draft"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "slides", force: true do |t|
     t.string   "titulo"

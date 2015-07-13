@@ -1,5 +1,6 @@
 class Legislacao < ActiveRecord::Base
 	mount_uploader :arquivo, LeiUploader
+  mount_uploader :publicacao, LeiUploader
 
 	before_destroy :clean_s3
 
@@ -27,6 +28,7 @@ class Legislacao < ActiveRecord::Base
 	private
 	  def clean_s3
 	    arquivo.remove!
+      publicacao.remove!
 	  rescue Excon::Errors::Error => error
 	    puts "Something gone wrong"
 	    false

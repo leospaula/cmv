@@ -5,14 +5,11 @@
       <div class="lei-data">
 
         <div class="row">
-          <div class="col-md-4 item">
-            <p class="destaque-first"><strong><%= legislacao.tipo %> N <%= legislacao.numero %>/<%= legislacao.ano %></strong></p>
+          <div class="col-md-5 item">
+            <p class="destaque-first"><strong><%= legislacao.tipo %> Nº <%= legislacao.numero %>/<%= legislacao.ano %></strong></p>
           </div>
-          <div class="col-md-4 item">
-            <p><strong class="destaque">Situacao: </strong><%= legislacao.situacao %></p>
-          </div>
-          <div class="col-md-4 item">
-            <p><strong class="destaque">Classificacao: </strong><%= legislacao.classificacao %></p>
+          <div class="col-md-7 item">
+            <p><strong class="destaque">Classificação: </strong><%= legislacao.classificacao %></p>
           </div>
         </div>
 
@@ -24,30 +21,41 @@
         </div>
 
         <div class="row">
-        <% if (legislacao.situacao == 'Revogado')%>
-          <div class="col-md-7 item">
+          <div class="col-md-10 item">
             <p><strong class="destaque">Autores: </strong><%= legislacao.autoria %></p>
           </div>
-          <div class="col-md-4 item">
-            <p><strong class="destaque">Revogado por: </strong><%= legislacao.revogado_por %></p>
-          </div>
-          <div class="col-md-1">
-              <%= link_to legislacao.arquivo_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar" do %>
-                <%= glyph 'download-alt' %>
-              <%- end -%>
-          </div>
-        <% else %>
-          <div class="col-md-11 item">
-            <p><strong class="destaque">Autores: </strong><%= legislacao.autoria %></p>
-          </div>
-          <div class="col-md-1">
-              <%= link_to legislacao.arquivo_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar" do %>
-                <%= glyph 'download-alt' %>
-              <%- end -%>
-          </div>
-        <% end %>
         </div>
 
+        <div class="row">
+          <% if (legislacao.situacao == 'Revogado')%>
+            <div class="col-md-4 item">
+              <p><strong class="destaque">Situação: </strong><%= legislacao.situacao %></p>
+            </div>
+            <div class="col-md-4 item">
+              <p><strong class="destaque">Pela Lei Nº </strong><%= legislacao.revogado_por %></p>
+            </div>
+            <div class="col-md-2 col-md-offset-1 item">
+              <%= link_to "Diário Oficial", legislacao.publicacao_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar"%>
+            </div>
+            <div class="col-md-1 item">
+              <%= link_to legislacao.arquivo_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar" do %>
+                <%= glyph 'download-alt' %>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="col-md-4 item">
+              <p><strong class="destaque">Situação: </strong><%= legislacao.situacao %></p>
+            </div>
+            <div class="col-md-2 col-md-offset-5 item">
+              <%= link_to "Diário Oficial", legislacao.publicacao_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar"%>
+            </div>
+            <div class="col-md-1 item">
+              <%= link_to legislacao.arquivo_url, :target => '_blank', :class => 'btn btn-primary download-link', :title => "Visualizar" do %>
+                <%= glyph 'download-alt' %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

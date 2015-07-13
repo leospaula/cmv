@@ -3,16 +3,16 @@
 
     <%= form_tag({controller: 'legislacoes', action: 'search'}, method: :get, remote: true) do %>
       <div class="col-md-12">
-        <h3>Pesquisa de Leis</br><small></small></h3>
+        <h3>Pesquisa</br><small></small></h3>
         <div class="input-group col-md-7 center-block box-search">
 
           <div class="row">
             <div class="col-md-12">
               <div class="col-md-6">
-                <label class="lei-label"for="ano">Numero/Ano: </label>
+                <label class="lei-label"for="ano">Número/Ano: </label>
                 <div class="row">
                   <div class="col-md-4 lei-input">
-                  <%= number_field_tag :numero ,params[:numero], :class => 'form-control input-sm',  placeholder: "Numero" %>
+                  <%= number_field_tag :numero ,params[:numero], :class => 'form-control input-sm',  placeholder: "Número" %>
                   </div>
                   <div class="col-md-4 lei-input">
                   <%= select_tag :ano, options_for_select(Legislacao.anos), :prompt => "Todos" , :class => 'form-control input-sm inline', :id => 'ano'%>
@@ -20,7 +20,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                  <label class="lei-label" for="classificacao">Classificacao: </label>
+                  <label class="lei-label" for="classificacao">Classificação: </label>
                 <div class="row">
                   <div class="col-md-12 lei-input">
                     <%= select_tag :classificacao, options_for_select(Legislacao.classificacoes), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'classificacao'%>
@@ -38,12 +38,12 @@
                 <label class="lei-label" for="tipo">Tipo: </label>
                 <div class="row">
                   <div class="col-md-4 lei-input">
-                  <%= select_tag :tipo, options_for_select(Legislacao.tipos), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'tipo'%>
+                  <%= select_tag :tipo, options_for_select(Legislacao.tipos), :prompt => "Todos" , :class => 'form-control input-sm', :id => 'tipo'%>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
-                  <label class="lei-label" for="situacao">Situacao: </label>
+                  <label class="lei-label" for="situacao">Situação: </label>
                 <div class="row">
                   <div class="col-md-4 lei-input">
                     <%= select_tag :situacao, options_for_select(Legislacao.situacoes), :prompt => "Todas" , :class => 'form-control input-sm', :id => 'situacao'%>

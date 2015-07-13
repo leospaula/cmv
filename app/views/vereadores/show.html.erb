@@ -1,18 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
+<div class="row container">
   <div class="col-md-3">
     <div class="well vereador-sidebar">
       <div><%= image_tag @vereador.avatar_url(:thumb), :class => 'img-thumbnail' %></div>
 
       <% if !@vereador.nome.blank? %>
-        <div><strong>Nome:</strong> <%= @vereador.nome%></div>
+        <div><h5><%= @vereador.nome%></br><small><strong><%= @vereador.partido %></strong></small></h5></div>
       <% end %>
 
-      <% if !@vereador.partido.blank? %>
-        <div><strong>Partido:</strong> <%= @vereador.partido %></div>
-      <% end %>
-
+    
+      </br>
       <h6>FALE COM SEU VEREADOR</h6>
 
       <% if !@vereador.telefone.blank? %>
@@ -30,6 +28,7 @@
       <% if @vereador.mesa_diretora? %>
         <div><i class="fa fa-user"></i> <%= @vereador.cargo_mesa %></div>
       <% end %>
+      </br>
 
       <% if !@vereador.facebook.blank? %>
         <a href="<%= @vereador.facebook %>" target='_blank' class='social-link text-center'><%= image_tag 'facebook.png' %></a>

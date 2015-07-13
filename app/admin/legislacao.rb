@@ -1,5 +1,5 @@
 ActiveAdmin.register Legislacao do
-	permit_params :numero, :ano, :ementa, :classificacao, :situacao, :revogado_por, :tipo, :autoria, :arquivo
+	permit_params :numero, :ano, :ementa, :classificacao, :situacao, :revogado_por, :tipo, :autoria, :arquivo, :publicacao
 
 
 index do
@@ -32,9 +32,11 @@ index do
       f.input :classificacao, :as => :select, :collection => Legislacao.classificacoes
       f.input :situacao, :as => :select, :collection => Legislacao.situacoes
       f.input :revogado_por
+      f.input :publicacao, :as => :file
       f.input :ementa
       f.input :autoria
       f.input :arquivo, :as => :file
+
     end
     f.actions
   end

@@ -1,6 +1,6 @@
 class LandingsController < ApplicationController
   def index
-  	@noticias = Noticia.publicadas
+  	@noticias = Noticia.publicadas.paginate(page: params[:page], per_page: 4)
   	@vereadores = Vereador.all
   	@slides = Slide.publicados
   	@notificacao = Notificacao.ultima_publicada

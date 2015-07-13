@@ -15,7 +15,7 @@ ActiveAdmin.register Slide do
 
 
   form do |f|
-    f.inputs "Inserir Slide na Pagina Inicial" do
+   f.inputs "Inserir Slide na Página Inicial" do
       f.input :titulo
       f.input :subtitulo
       f.input :publicado
