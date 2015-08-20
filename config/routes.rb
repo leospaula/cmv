@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get 'regimento' => 'landings#regimento', :as => 'regimento_page'
 
+  get 'tv_camara' => 'landings#tv_camara', :as => 'tv_camara_page'
+
   match '/search', to: 'legislacoes#search', via: :get
 
   #devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

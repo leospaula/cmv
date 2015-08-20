@@ -15,5 +15,8 @@ class LandingsController < ApplicationController
   	
   end
 
+  def tv_camara
+    
+  end
 
 end

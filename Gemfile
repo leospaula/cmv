@@ -100,7 +100,7 @@ group :development do
 end
 
 
-group :development, :test do
+group :development, :test, :production do
   gem 'dotenv-rails'
 end
 
