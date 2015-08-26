@@ -14,8 +14,10 @@ class Ability
     if admin_user.role == 'Comunicacao'
       can :manage, Noticia
       can :manage, Event
+      can :manage, Notificacao
       can :read, Noticia
       can :read, Event
+      can :read, Notificacao
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
 

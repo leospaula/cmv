@@ -4,11 +4,12 @@ class Transparencia < ActiveRecord::Base
 	before_destroy :clean_s3
 
 	validates :ano, :mes, :tipo, :arquivo, presence: true
-	validates :mes, uniqueness: { scope: [:ano, :tipo] }
+	validates :mes, uniqueness: { scope: [:ano, :tipo] }, if: '!info.present?'
+	validates :mes, uniqueness: { scope: :info }, if: 'info.present?'
 
 
 	def self.anos
-  		anos = %w[1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018]
+  		anos = %w[1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026 2027 2028 2029 2030]
   	end
 
   	def self.meses
@@ -16,7 +17,7 @@ class Transparencia < ActiveRecord::Base
   	end
 
   	def self.tipos
-  		tipos = ['Ordem de Pagamentos','Balancetes','Atas','Empenhos']
+  		tipos = ['Ordem de Pagamentos','Balancetes','Atas','Empenhos', 'Contratos Administrativos']
   	end
 
   	private

@@ -19,8 +19,8 @@ index do
     f.inputs "Inserir Evento" do
       f.input :title
       f.input :description
-      f.input :start_time
-      f.input :end_time
+      f.input :start_time, :as => :string, :input_html => {:class => "hasDatetimePicker"}
+      f.input :end_time, :as => :string, :input_html => {:class => "hasDatetimePicker"}
     end
     f.actions
   end

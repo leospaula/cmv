@@ -477,7 +477,7 @@ $space-xs: 10px;
   }
 
   ul li {
-    padding: 0px 20px;
+    padding: 0px 10px;
     font-size: 15px;
 
     a:hover {
@@ -582,12 +582,6 @@ img {
 //***********************************************************
 // FOOTER
 
-  #map-canvas {
-        width: 300px;
-        height: 250px;
-        background-color: #CCC;
-        padding: 30px 20px;
-      }
 
 address { 
     display: block;

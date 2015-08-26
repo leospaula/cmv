@@ -27,7 +27,7 @@ class TransparenciasController < InheritedResources::Base
   private
 
     def transparencia_params
-      params.require(:transparencia).permit(:ano, :mes, :tipo, :arquivo)
+      params.require(:transparencia).permit(:ano, :mes, :tipo, :arquivo, :info)
     end
 end
 

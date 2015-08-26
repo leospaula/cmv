@@ -19,4 +19,12 @@ class LandingsController < ApplicationController
     
   end
 
+  def comissoes
+    
+  end
+
+  def fale_conosco
+    
+  end
+
 end

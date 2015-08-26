@@ -28,7 +28,13 @@ Rails.application.routes.draw do
 
   get 'regimento' => 'landings#regimento', :as => 'regimento_page'
 
+  get 'comissoes' => 'landings#comissoes', :as => 'comissoes_page'
+
+  get 'cronograma' => 'landings#cronograma', :as => 'cronograma_page'
+
   get 'tv_camara' => 'landings#tv_camara', :as => 'tv_camara_page'
+
+  get 'fale_conosco' => 'landings#fale_conosco', :as => 'fale_conosco_page'
 
   match '/search', to: 'legislacoes#search', via: :get
 

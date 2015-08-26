@@ -9,8 +9,14 @@ $(document).ready(function() {
         center: 'prev title next',
         right: ''
     },
-    events: '/events.json'
-
+    events: '/events.json',
+    eventClick: function(event, jsEvent) {
+      var modal;
+      modal = $("#modal");
+      modal.find(".modal-title").html(event.title);
+      modal.find(".modal-body").html(event.description);
+      return modal.modal();
+    }
 
   });
 });

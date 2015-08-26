@@ -69,6 +69,7 @@ gem 'fog'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem "jquery-ui-rails"
 
 
 gem 'ckeditor'
