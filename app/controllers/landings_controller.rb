@@ -27,4 +27,8 @@ class LandingsController < ApplicationController
     
   end
 
+  def leis_estatutos
+    
+  end
+
 end

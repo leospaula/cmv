@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   get 'fale_conosco' => 'landings#fale_conosco', :as => 'fale_conosco_page'
 
+  get 'leis_estatutos' => 'landings#leis_estatutos', :as => 'leis_estatutos_page'
+
   match '/search', to: 'legislacoes#search', via: :get
 
   #devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
