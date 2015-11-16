@@ -15,7 +15,7 @@ index do
 	end
 
 	filter :numero
-  filter :ano , :as => :select, :collection => Legislacao.anos
+  filter :ano
   filter :tipo, :as => :select, :collection => Legislacao.tipos
   filter :classificacao, :as => :select, :collection => Legislacao.classificacoes
   filter :situacao, :as => :select, :collection => Legislacao.situacoes
@@ -27,7 +27,7 @@ index do
   form do |f|
     f.inputs "Inserir Lei" do
       f.input :numero
-      f.input :ano, :as => :select, :collection => Legislacao.anos
+      f.input :ano
       f.input :tipo, :as => :select, :collection => Legislacao.tipos
       f.input :classificacao, :as => :select, :collection => Legislacao.classificacoes
       f.input :situacao, :as => :select, :collection => Legislacao.situacoes
